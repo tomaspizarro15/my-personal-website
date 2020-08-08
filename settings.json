@@ -1,0 +1,58 @@
+{
+  "workbench.iconTheme": "eq-material-theme-icons-darker",
+  "workbench.colorTheme": "Material Theme",
+  "workbench.colorCustomizations": {},
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.autoIndent": "full",
+  // "editor.codeLens": false,
+  // "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorStyle": "line",
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": false,
+  // "editor.letterSpacing": 0.1,
+  "editor.lineHeight": 20,
+  "editor.minimap.enabled": true,
+  // "editor.multiCursorModifier": "ctrlCmd",
+  // "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  // "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.hotExit": "onExit",
+  "files.defaultLanguage": "",
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.minimap.size": "fit",
+  "editor.padding.top": 10,
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontFamily": "Meslo LG L DZ for Powerline",
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "nativescript.analytics.enabled": false,
+  "explorer.compactFolders": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.enableSmartCommit": true
+}
