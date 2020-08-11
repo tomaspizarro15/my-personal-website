@@ -7,16 +7,15 @@ class Header extends Component {
 
   state = {
     navigationTools : [
-      {title : 'educacion' , path :'/educacion'},
+      {title : 'mi educacion' , path :'/educacion'},
       { title: 'biografia', path: '/biografia' },
       { title: 'contacto', path: '/contacto' },
     ]
   }
-
   render(){
     return(
-    <nav class ="header_container">
-      <ul class ="header_tools">
+    <nav className ="header_container">
+      <ul className ="header_tools">
         {this.state.navigationTools.map((tool , i)=> {
           return (
             <HeaderTools key={i} title={tool.title} path={tool.path} />

@@ -1,4 +1,5 @@
 .header_container {
+  position: fixed;
   display : flex;
   flex-direction: row;
   justify-content: center;
@@ -22,7 +23,7 @@
 .header_tools_anchor {
   color: #ddd;
   text-decoration: none;
-  font-size: 1.8vmin;
+  font-size: 18px;
   transition:  color 250ms ease-in-out;
 }
 .header_tools_anchor:hover {
