@@ -1,10 +1,8 @@
 .main_page__container {
-    width: 100%;
+    width: 75%;
     height: inherit;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    background-color: red;
-    margin: 55px 0 0 0;
 }

@@ -8,15 +8,16 @@ import Toolbar from './components/toolbar/Toolbar';
 
 class App extends Component {
 
-    state = {}
-
+      state = {}
   render() {
     return (
       <div className="App">
         <BrowserRouter>
-          <Header />
-          <Toolbar/>
+          <Header/>                                 
+         <div className ="App_body">
           <Route path="/" exact component = {Main}/>
+          <Toolbar/>
+         </div>
         </BrowserRouter>
       </div>
     );

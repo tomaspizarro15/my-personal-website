@@ -6,7 +6,7 @@ class Main extends Component {
   render() {
     return(
       <div className ="main_page__container">
-
+        Hello world
       </div>
     )
   }
