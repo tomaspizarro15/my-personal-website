@@ -7,9 +7,10 @@ class Header extends Component {
 
   state = {
     navigationTools: [
-      { title: 'mi educacion', path: '/educacion' },
-      { title: 'biografia', path: '/biografia' },
-      { title: 'contacto', path: '/contacto' },
+      { title: 'Educacion', path: '/educacion' },
+      { title: 'Sobre mi', path: '/biografia' },
+      { title: 'Contactarse', path: '/contacto' },
+      { title: 'Conocimientos', path: '/contacto' },
     ]
   }
   render() {

@@ -11,7 +11,11 @@
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
-
+.App_main__content {
+  width: 72.5%;
+  display: flex;
+  justify-content: center;
+}
 .App-header {
   background-color: #222;
   height: 150px;

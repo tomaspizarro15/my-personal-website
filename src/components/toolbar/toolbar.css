@@ -1,4 +1,37 @@
 .toolbar_container {
-    box-shadow: 0 0 15px -5px;
+    box-shadow: 0 0 12.5px -7.5px;
     width: 25%;
+    text-align: left;
+    font-size: 2.5vmin;
+    margin: 0 0 2.5vw 0;
+    border-radius: 4spx;
+}
+.toolbar_section {
+    margin:1vw  0 2vw 0;
+    padding: 0;
+    text-indent: 2vw;
+}
+.toolbar_title {
+    font-size: 3vmin;
+    font-weight: bold;
+}
+.toolbar_item {
+    list-style: none;
+    margin: 10px 0 10px 0;
+    transition: transform 200ms ease-in-out ;
+}
+
+.toolbar_item:hover {
+    transform: translateX(15px);
+    transition: transform 200ms ease-in-out ;
+}
+.toolbar_item:hover a {
+    color: #1b1b1b;
+    transition: color 200ms ease-in-out , font-weight 200ms ease-in-out;
+    font-weight: bold;
+}
+.toolbar_item a {
+    text-decoration: none;
+    color: #5b5b5b;
+    transition: color 200ms ease-in-out , font-weight 200ms ease-in-out;
 }
