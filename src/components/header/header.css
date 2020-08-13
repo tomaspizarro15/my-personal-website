@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100px;
+  height: 75px;
 }
 .header{
   position: fixed;
@@ -26,14 +26,14 @@
   list-style: none;
   padding: 5px;
   margin: 0 15px 0 15px;
+  width: 6vw;
 }
 .header_tools_anchor {
   color: #ddd;
   text-decoration: none;
   font-size: 18px;
-  transition:  color 250ms ease-in-out;
+
 }
 .header_tools_anchor:hover {
-  color: white;
-  transition:  color 250ms ease-in-out;
+  font-weight: bold;
 }

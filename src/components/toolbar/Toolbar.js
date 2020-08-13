@@ -140,15 +140,18 @@ class Toolbar extends Component {
         }
         console.log(rForms)
         return (
-            <div className="toolbar_container">
-                {rForms.map((section, i) => {
-                    return (
-                        <ul key={i} className="toolbar_section">
-                            <label className="toolbar_title">{section.title}</label>
-                            <ToolbarItems items={section.items} title={section.title} path={section.path} />
-                        </ul>
-                    )
-                })}
+            <div className ="toolbar_container">
+                <h1>Blogs</h1>
+                <div className="toolbar">
+                    {rForms.map((section, i) => {
+                        return (
+                            <ul key={i} className="toolbar_section">
+                                <label className="toolbar_title">{section.title}</label>
+                                <ToolbarItems items={section.items} title={section.title} path={section.path} />
+                            </ul>
+                        )
+                    })}
+                </div>
             </div>
         )
     }
