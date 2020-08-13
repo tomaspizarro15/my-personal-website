@@ -1,0 +1,11 @@
+.home_button__container {
+    height: 100%;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_button__logo {
+    width: 35px;
+    height: 35px;
+}

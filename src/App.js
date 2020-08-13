@@ -18,12 +18,14 @@ class App extends Component {
           <Header />
           <div className="App_body">
             <div className="App_main__content">
-              <Route path="/" exact component={Main} />
-              <Route path="/contactos" exact component={Main} />
-              <Route path="/educacion" exact component={Main} />
+              <Switch>
+                <Route path="/" exact component={Main} />
+                <Route path="/contactos" exact component={Main} />
+                <Route path="/educacion" exact component={Main} />
+              </Switch>
             </div>
-            <div class ="App_side__content">
-              <ProfileCard/>
+            <div class="App_side__content">
+              <ProfileCard />
               <Toolbar />
             </div>
           </div>

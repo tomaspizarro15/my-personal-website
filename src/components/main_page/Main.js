@@ -1,12 +1,19 @@
 import React ,{Component}from 'react';
 import './main.css'
+import Phrase from '../phrases/phrases';
 
 class Main extends Component {
+
+  state = {
+    frases : {
+      bienvenida : 'Stay a while and listen!'
+    }
+  }
 
   render() {
     return(
       <div className ="main_page__container">
-        <h1>Stay a while and listen!</h1>
+        <Phrase message ={this.state.frases.bienvenida}/>
       </div>
     )
   }
