@@ -14,6 +14,6 @@ const TextComponent = (props) => {
             })}
         </div>
     )
-}   
+}
 
 export default TextComponent;
