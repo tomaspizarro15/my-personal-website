@@ -1,0 +1,14 @@
+.text_component__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text_component__title {
+    color: #6b666b;
+    font-size: 3vmin;
+}
+.text_component__paragraph {
+    color: #1b1b1b;
+    font-size:2.5vmin;
+}

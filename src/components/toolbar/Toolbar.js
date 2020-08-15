@@ -139,6 +139,7 @@ class Toolbar extends Component {
             })
         }
         console.log(rForms)
+        console.log(rForms.concat())
         return (
             <div className ="toolbar_container">
                 <h1>Blogs</h1>

@@ -4,11 +4,15 @@ import './phrases.css';
 
 
 const Phrase = (props) => {
+    
+    let color = props.color.toString()
     return (
         <div className="phrase_container">
-            <div classNmae="phrase"><h1>
-                {props.message}
-            </h1></div>
+            <div className="phrase">
+                <h1 style={{color : '#212B85'}}>
+                    {props.message}
+                </h1>
+            </div>
         </div>
     )
 }

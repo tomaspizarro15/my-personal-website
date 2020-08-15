@@ -24,7 +24,7 @@ class App extends Component {
                 <Route path="/educacion" exact component={Main} />
               </Switch>
             </div>
-            <div class="App_side__content">
+            <div className="App_side__content">
               <ProfileCard />
               <Toolbar />
             </div>
