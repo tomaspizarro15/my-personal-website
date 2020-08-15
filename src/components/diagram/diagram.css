@@ -6,3 +6,51 @@
     width: 100%;
     box-shadow: 0 0 10px -7.5px;
 }
+.diagram_items {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.diagram_item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 125px;
+    height: 7.5rem;
+    padding: 0;
+    margin: 0;
+}
+.diagram_items li {
+    list-style: none;
+}
+.diagram_item__icon {
+    width: 95px;
+    transition: width 150ms ease;
+}
+.diagram_item__icon:hover {
+    width: 100px;
+    transition: width 150ms ease;
+    cursor: pointer;
+}
+.item_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  0rem 0 5rem 0;
+}
+.item {
+    display: flex;
+    justify-content: center;
+}
+.item_line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.item_stick {
+    width: 2.5px;
+    background-color: #6b6b6b;
+    height: 5rem;
+}

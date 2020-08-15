@@ -173,7 +173,7 @@ class Toolbar extends Component {
                     {rForms.map((section, i) => {
                         return (
                             <ul key={i} className="toolbar_section">
-                                <label className="toolbar_title" onClick= {() => {this.activateSection(i)}}>{section.title}</label>
+                                <label className="toolbar_title"  onClick= {() => {this.activateSection(i)}} >{section.title}</label>
                                 <ToolbarItems id = {i} items={section.items} title={section.title} path={section.path} status={section.status}/>
                             </ul>
                         )

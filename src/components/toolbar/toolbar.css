@@ -30,13 +30,13 @@
     margin: 10px 0 10px 0;
     transition: transform 200ms ease-in-out ;
     font-size: 1.25rem;
-    transition: margin 500ms , opacity 250ms;
+    transition: margin 350ms ease-in-out , opacity 250ms , transform 200ms ease-in-out;
 }
 .toolbar_item.hidden {
     opacity: 0;
     height: 0;
     margin: 0;
-    transition: margin 500ms ;
+    transition: margin 350ms ease-in-out ;
 }
 .toolbar_item:hover {
     transform: translateX(15px);
