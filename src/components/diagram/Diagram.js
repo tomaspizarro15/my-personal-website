@@ -7,8 +7,10 @@ class Diagram extends PureComponent {
     render() {
         return(
             <div className="diagram_container">
-                
+             
             </div>
         ); 
     }
 }
+
+export default Diagram;
