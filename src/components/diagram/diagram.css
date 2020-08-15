@@ -50,7 +50,12 @@
     width: 100%;
 }
 .item_stick {
-    width: 2.5px;
+    width: 3px;
     background-color: #6b6b6b;
-    height: 5rem;
+    height: 7.5rem;
+    transition : background-color 250ms ease; 
+}
+.item_stick.on {
+    background-color: #212B85;
+    transition : background-color 250ms ease; 
 }

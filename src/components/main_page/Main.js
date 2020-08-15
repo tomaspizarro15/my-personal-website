@@ -4,11 +4,6 @@ import Phrase from '../phrases/phrases';
 import TextComponent from '../text_component/text_component';
 import Diagram from '../diagram/Diagram';
 
-import reactIcon from './react_icon.png';
-import mongoDbIcon from './mongodb_icon.png';
-import expressIcon from './node_express_icon.png';
-import nodeIcon from './node_icon.png';
-
 class Main extends Component {
 
   state = {
@@ -27,27 +22,8 @@ class Main extends Component {
         { text: 'El objetivo es enseñar el contenido que mas pueda y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
     },
-    mernDiagram: {
-      title: 'Ecosistema MERN (JavaScript)',
-      items: [
-        { status : false ,title: 'Mongo', description: 'Mongo es el tipo de base de datos de este Ecosistema', href: '', color: '', icon: mongoDbIcon  },
-        { status : false ,title: '', description: '', href: '', color: '', icon: expressIcon },
-        { status : false ,title: '', description: '', href: '', color: '', icon: reactIcon },
-        { status : false ,title: '', description: '', href: '', color: '', icon: nodeIcon },
-      ],
-      paragraphs: [
-        { text: 'Se utilizo todo un Ecosistema JavaScript' }
-      ],
-    }
+    
   }
-
-
-  activateDiagram = () => {
-     
-  }
-
-
-
   render() {
     let phrases = { ...this.state.phrases }
     let paragraphs = { ...this.state.paragraphs }
@@ -61,7 +37,7 @@ class Main extends Component {
         <Phrase phrase={phrases.welcome} />
         <TextComponent title={phrases.main.message} paragraphs={paragraphs.main} />
         <Phrase phrase={phrases.mern} />
-        <Diagram content={mern} />
+        <Diagram click = {() => {this.activateDiagram()}}/>
       </div>
     )
   }

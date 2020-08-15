@@ -8,9 +8,9 @@ const TextComponent = (props) => {
         <div className ="text_component__container">
          <div className="text_component">
          <h1 className="text_component__title">{props.title}</h1>
-            {props.paragraphs.map(paragraph => {
+            {props.paragraphs.map((paragraph , i) => {
                 return(
-                    <p className="text_component__paragraph">{paragraph.text}</p>
+                    <p key={i} className="text_component__paragraph">{paragraph.text}</p>
                 )
             })}
          </div>

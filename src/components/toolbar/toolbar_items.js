@@ -12,7 +12,7 @@ const ToolbarItems = (props) => {
        <React.Fragment>
                {props.items.map((item , i) => {
                 return (
-                    <li className = {activeStyle}key = {i}><Link to ={item.path}>{item.title}</Link></li>
+                    <li className = {activeStyle} key = {i}><Link to ={props.path}>{item.title}</Link></li>
                 ) 
             })}
        </React.Fragment>
