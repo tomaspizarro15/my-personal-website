@@ -1,16 +1,17 @@
-import React , { PureComponent } from 'react'; 
+import React, { PureComponent } from 'react';
 import './diagram.css';
 import Phrase from '../phrases/phrases';
 import TextComponent from '../text_component/text_component';
 
 
 const Diagram = (props) => {
-        return(
-            <div className="diagram_container">
-                <TextComponent paragraphs = {props.paragraphs}/>
-            </div>
-        ); 
-    
+    return (
+        <div className="diagram_container">
+            <Phrase phrase = {{color : 'black' , message : props.content.title}}/>
+           
+        </div>
+    );
+
 }
 
 export default Diagram;

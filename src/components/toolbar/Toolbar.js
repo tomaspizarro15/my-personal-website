@@ -9,6 +9,7 @@ class Toolbar extends Component {
             javascript: {
                 title: 'Javascript',
                 path: '/javascript',
+                status: false,
                 items: [
                     { title: 'History', path: '/' },
                     { title: 'introduction', path: '/' },
@@ -27,6 +28,7 @@ class Toolbar extends Component {
             react: {
                 title: 'React',
                 path: '/react',
+                status: false,
                 items: [
                     { title: 'Introduction', path: '/' },
                     { title: 'React basics', path: '/' },
@@ -52,6 +54,7 @@ class Toolbar extends Component {
             redux: {
                 title: 'Redux',
                 path: '/redux',
+                status: false,
                 items: [
                     { title: '¿Que es Redux?', path: '/' },
                     { title: '¿Como funciona Redux?', path: '/' },
@@ -64,6 +67,7 @@ class Toolbar extends Component {
             node: {
                 title: 'Node',
                 path: '/node',
+                status: false,
                 items: [
                     { title: 'About node', path: '/' },
                     { title: 'Basics', path: '/' },
@@ -83,6 +87,7 @@ class Toolbar extends Component {
             express: {
                 title: 'Express',
                 path: '/node',
+                status: false,
                 items: [
                     { title: 'Introduction', path: '/' },
                     { title: 'Router', path: '/' },
@@ -95,6 +100,7 @@ class Toolbar extends Component {
             Mongo: {
                 title: 'Mongodb',
                 path: '/mongodb',
+                status: false,
                 items: [
                     { title: 'Mongo', path: '/' },
                     { title: 'CRUD', path: '/' },
@@ -108,6 +114,7 @@ class Toolbar extends Component {
             SQL: {
                 title: 'SQL',
                 path: '/sql',
+                status: false,
                 items: [
                     { title: 'Introduccion', path: '/' },
                     { title: 'mySQL', path: '/' },
@@ -121,6 +128,7 @@ class Toolbar extends Component {
             ORM: {
                 title: 'ORM',
                 path: '/orm',
+                status: false,
                 items: [
                     { title: '¿Que es un ORM?', path: '/' },
                     { title: 'Sequelize', path: '/' },
@@ -129,6 +137,24 @@ class Toolbar extends Component {
             },
         },
     }
+    
+    activateSection = (i) => {
+        let newSections = {...this.state.sections}
+        let sectionsArray = []; 
+        console.log(newSections)
+        for( let id in newSections){
+            sectionsArray.push({
+                ...newSections[id]
+            })
+        }
+        
+        sectionsArray[i].status = !sectionsArray[i].status; 
+        console.log(sectionsArray[i])
+
+        let sections = {...sectionsArray}
+        this.setState({sections : sections})
+    }
+
     render() {
         let rForms = [];
         for (let id in this.state.sections) {
@@ -141,14 +167,14 @@ class Toolbar extends Component {
         console.log(rForms)
         console.log(rForms.concat())
         return (
-            <div className ="toolbar_container">
+            <div className="toolbar_container">
                 <h1>Blogs</h1>
                 <div className="toolbar">
                     {rForms.map((section, i) => {
                         return (
                             <ul key={i} className="toolbar_section">
-                                <label className="toolbar_title">{section.title}</label>
-                                <ToolbarItems items={section.items} title={section.title} path={section.path} />
+                                <label className="toolbar_title" onClick= {() => {this.activateSection(i)}}>{section.title}</label>
+                                <ToolbarItems id = {i} items={section.items} title={section.title} path={section.path} status={section.status}/>
                             </ul>
                         )
                     })}
