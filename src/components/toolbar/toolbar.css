@@ -11,12 +11,13 @@
     padding: 0.25vw 0 0.25vw 0;
 }
 .toolbar_section {
-    margin: 2vw  0 2vw 0;
+    margin: 2.5vw  0 2.5vw 0;
     padding: 0;
     text-indent: 2vw;
 }
 .toolbar_title {
-    font-size: 1.5rem;
+    color: #5b5b5b;
+    font-size: 1.25rem;
     font-weight: bold;
     transition: color 250ms ease-in;
 }
@@ -36,6 +37,8 @@
     opacity: 0;
     height: 0;
     margin: 0;
+    visibility: hidden;
+    transition-delay: visibility 250ms;
     transition: margin 350ms ease-in-out ;
 }
 .toolbar_item:hover {
