@@ -30,7 +30,12 @@ class Diagram extends Component {
                ],
                lower : [
                    {text: 'Este modelo de construccion de aplicaciones asi mismo como MEAN , que es reemplaza React.js con el framework Angular , tiene un gran potencial al permitir al desarrollador programar en un solo lenguaje JS, ya que las bases de datos se manejan en formato "JSON", JavaScript Object Notation'},
-                   {text: 'Ya desde 2009 que esta es una arquitectura viable, con el desarrollo de el entorno de ejecucion Node , creado por Ryan Dahl'}
+                   {text: 'Ya desde 2009 que esta es una arquitectura viable, con el desarrollo de el entorno de ejecucion Node , creado por Ryan Dahl'},
+                   {text: 'los modulos de node permitieron la facil adherencia de modulos de conexion con sesiones, bases de datos tales como Mongo o mySQL'},
+                   {text: 'Mongodb permite un tipo de escalado horizontal y una flexibilidad de los datos en las colecciones, ademas de confiabilidad y seguridad de los datos sensibles del usuario'},
+                   {text: 'Express permite explotar al maximo modulos de Node.js , como por ejemplo Routing , Sessions ,Validaciones etc'},
+                   {text: 'React permite brindar al usuario una UI/UX excelente ademas de tener herramientas de renderizado y ruteo'},
+                   {text: 'Node es el entorno de ejecucion que permite levantar una aplicación JavaScript en server-side y no solo en el client-side'}         
                ]
             },
         },

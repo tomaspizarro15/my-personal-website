@@ -90,8 +90,11 @@ class Toolbar extends Component {
                 status: false,
                 items: [
                     { title: 'Introduction', path: '/' },
-                    { title: 'Router', path: '/' },
+                    { title: 'Introduction', path: '/' },
                     { title: 'Express app', path: '/' },
+                    { title: 'express-session', path: '/' },
+                    { title: 'express-router', path: '/' },
+                    { title: 'express-validator', path: '/' },
                     { title: 'Modelo Vista Controlador', path: '/' },
                     { title: 'Middleware', path: '/' },
                     { title: 'Guardas', path: '/' },
