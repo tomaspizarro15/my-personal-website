@@ -27,6 +27,7 @@ class Main extends Component {
       ],
       git: [
         {text: 'Podes seguirme en Git-hub, ver mis repositorios ,clonarlos y trabajar modificandolos o simplemente analizar mi trabajo .Todo lo que conlleve se agradece mucho, tambien podes visitar tanto  mi perfil de Linkedin como miperfil en Codewars , estan en el encabezado de la pagina'},
+        {text: 'Por ahora sigo trabajando en la pagina y todavia no agregamos una base de datos, pero pronto... estar atentos'}
       ]
     },
     lists: {

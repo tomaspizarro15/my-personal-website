@@ -7,6 +7,7 @@ import Main from './components/main_page/Main';
 import Toolbar from './components/toolbar/Toolbar';
 import Footer from './components/footer/footer';
 import ProfileCard from './components/profile_card/ProfileCard';
+import Education from './components/education_page/education';
 
 class App extends Component {
 
@@ -21,7 +22,7 @@ class App extends Component {
               <Switch>
                 <Route path="/" exact component={Main} />
                 <Route path="/contactos" exact component={Main} />
-                <Route path="/educacion" exact component={Main} />
+                <Route path="/educacion" exact component={Education} />
               </Switch>
             </div>
             <div className="App_side__content">
