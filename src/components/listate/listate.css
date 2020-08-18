@@ -22,7 +22,30 @@
     border: 2px solid transparent;
     transition: border 250ms ease-in-out;
 }
-
+.list_item_text {
+    width: 95%;
+    display: inline-flex;
+    align-items: center;
+}
+.list_item_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_item_icon img {
+    width: 15px;
+    transition: all 100ms ease-in-out;
+}
+.list_item_icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_item_icon img:hover {
+    width: 17.5px;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
 .list_item:hover {
     border: 2px solid #212B85;
     transition: border 250ms ease-in-out;

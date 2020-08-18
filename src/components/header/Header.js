@@ -19,7 +19,9 @@ class Header extends Component {
       <div className="header_container">
         <nav className="header">
           <div className="header_left">
-            <p>Hello</p>
+            <a className="header_home" href="/">
+            <HomeButton src={Home_Logo} alt="home"/>
+            </a>
           </div>
           <div className="header_void">
 

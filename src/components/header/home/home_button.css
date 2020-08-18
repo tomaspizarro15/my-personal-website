@@ -6,6 +6,10 @@
     align-items: center;
 }
 .home_button__logo {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    transition: width 150ms ease;
+}
+.home_button__logo:hover {
+    width: 30px;
+    transition: width 150ms ease;
 }

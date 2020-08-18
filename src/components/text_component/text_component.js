@@ -4,6 +4,10 @@ import './text_component.css';
 
 
 const TextComponent = (props) => {
+
+    const text = [props.paragraphs[0].text]
+    text.unshift("     ");
+    console.log(text)
     return (
         <div className="text_component__container">
             <div className="text_component">
