@@ -7,9 +7,9 @@ const Phrase = (props) => {
     return (
         <div className="phrase_container">
             <div className="phrase">
-                <h1 style={{color : props.phrase.color}}>
+                <p style={{color : props.phrase.color}}>
                     {props.phrase.message}
-                </h1>
+                </p>
             </div>
         </div>
     )

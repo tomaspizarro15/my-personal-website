@@ -61,3 +61,12 @@
     opacity: 1;
     transition: all 250ms ease;
 }
+
+@media(max-width: 768px) {
+    .list_container {
+        width: 100%;
+    }
+    .list_item p {
+        display: none;
+    }
+}

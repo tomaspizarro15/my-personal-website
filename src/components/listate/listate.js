@@ -12,7 +12,6 @@ const Listate = (props) => {
         <React.Fragment>
             <Phrase phrase={phrase} />
             <div className="list_container">
-
                 <ul className="list">
                     {props.listado.map((elemento, i) => {
                         return (
@@ -27,7 +26,6 @@ const Listate = (props) => {
                                     </a>
                                 </div>
                             </li>
-
                         )
                     })}
                 </ul>

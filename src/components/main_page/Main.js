@@ -36,8 +36,13 @@ class Main extends Component {
         items: [
           { title: 'nodemon', code: 'npm install --save-dev nodemon', href: "https://www.npmjs.com/package/nodemon" },
           { title: 'body parser', code: 'npm install --save body-parser', href: "https://www.npmjs.com/package/body-parser" },
+          { title: 'mongodb', code: 'npm install --save mongodb', href: "" },
+          { title: 'bcrypt', code: 'npm install --save bcrypt', href: "" },
+          { title: 'csurf', code: 'npm install --save csurf', href: "" },
           { title: 'mongoose', code: 'npm install --save mongoose', href: "https://mongoosejs.com/docs/guide.html" },
-          { title: 'create-react-app', code: 'npm install --save create-react-app', href: "https://create-react-app.dev/docs/getting-started/" }
+          { title: 'create-react-app', code: 'npm install --save create-react-app', href: "https://create-react-app.dev/docs/getting-started/" },
+          { title: 'axios', code: 'npm install --save axios', href: "" },
+      
         ]
       },
       git : {
