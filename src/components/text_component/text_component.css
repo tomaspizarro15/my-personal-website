@@ -12,6 +12,10 @@
     margin: 10px 0 10px 0;
     text-align: left;
 }
+.text_component_space {
+    width: 25px;
+    background-color: #1b1b1b;
+}
 .text_component__title {
     color: black;
     font-size: 3vmin;

@@ -1,19 +1,19 @@
 import React from 'react';
-import './text_component.css'; 
+import './text_component.css';
 
 
 
 const TextComponent = (props) => {
     return (
-        <div className ="text_component__container">
-         <div className="text_component">
-         <h1 className="text_component__title">{props.title}</h1>
-            {props.paragraphs.map((paragraph , i) => {
-                return(
-                    <p key={i} className="text_component__paragraph">{paragraph.text}</p>
-                )
-            })}
-         </div>
+        <div className="text_component__container">
+            <div className="text_component">
+                <h1 className="text_component__title">{props.title}</h1>
+                {props.paragraphs.map((paragraph, i) => {
+                    return (
+                        <p key={i} className="text_component__paragraph">{paragraph.text}</p>
+                    )
+                })}
+            </div>
         </div>
     )
 }

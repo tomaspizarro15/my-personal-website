@@ -16,19 +16,28 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className ="header_container">
+      <div className="header_container">
         <nav className="header">
-        <HomeButton alt ={'home'} src ={Home_Logo}/>
-          <ul className="header_tools">
-            {this.state.navigationTools.map((tool, i) => {
-              return (
-                <HeaderTools key={i} title={tool.title} path={tool.path} />
-              )
-            })}
-          </ul>
+          <div className="header_left">
+            <p>Hello</p>
+          </div>
+          <div className="header_void">
+
+          </div>
+          <div className="header_right">
+            <ul className="header_tools">
+              {this.state.navigationTools.map((tool, i) => {
+                return (
+                  <HeaderTools key={i} title={tool.title} path={tool.path} />
+                )
+              })}
+            </ul>
+          </div>
+
         </nav>
       </div>
-    )  } 
+    )
+  }
 }
 
 export default Header;

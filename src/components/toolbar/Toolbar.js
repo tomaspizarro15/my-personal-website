@@ -31,6 +31,7 @@ class Toolbar extends Component {
                 status: false,
                 items: [
                     { title: 'Introduction', path: '/' },
+                    { title: 'create-react-app', path:'/'},
                     { title: 'React basics', path: '/' },
                     { title: 'ReactDOM', path: '/' },
                     { title: 'JSX', path: '/' },

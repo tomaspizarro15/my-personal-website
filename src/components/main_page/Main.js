@@ -3,6 +3,7 @@ import './main.css'
 import Phrase from '../phrases/phrases';
 import TextComponent from '../text_component/text_component';
 import Diagram from '../diagram/Diagram';
+import Listate from '../listate/listate';
 
 class Main extends Component {
 
@@ -22,6 +23,15 @@ class Main extends Component {
         { text: 'El objetivo es enseñar el contenido que mas pueda y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
     },
+    lists : {
+      title: 'Modulos utilizados en esta pagina web',
+      usedModules : [
+        {title: 'nodemon' , code:'npm install --save-dev nodemon'},
+        {title: 'body parser' , code: 'npm install --save body-parser'},
+        {title: 'mongoose' , code:'npm install --save mongoose'},
+        {title: 'create-react-app', code:'npm install --save create-react-app'}
+      ] 
+    }
     
   }
   render() {
@@ -29,7 +39,7 @@ class Main extends Component {
     let paragraphs = { ...this.state.paragraphs }
     let mern = { ...this.state.mernDiagram };
 
-
+    let list = {...this.state.lists}
 
 
     return (
@@ -38,6 +48,7 @@ class Main extends Component {
         <TextComponent title={phrases.main.message} paragraphs={paragraphs.main} />
         <Phrase phrase={phrases.mern} />
         <Diagram click = {() => {this.activateDiagram()}}/>
+        <Listate listado = {list.usedModules} title= {list.title}/>
       </div>
     )
   }
