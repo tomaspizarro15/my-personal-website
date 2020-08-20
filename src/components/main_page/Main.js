@@ -16,7 +16,7 @@ class Main extends Component {
       main: { message: '"Somos afortunados de poder construir algo para cambiar algo, algo con significado, sea para nosotros o para el mundo"', color: '#212B85' },
       welcome: { message: 'Stay a while and listen!', color: '#212B85' },
       mern: { message: '¿Como fue desarrollada esta pagina?', color: '#212b85' },
-      agradecimiento: {message: 'Muchas gracias por visitarnos' , color:"#1b1b1b"}
+      agradecimiento: { message: 'Muchas gracias por visitarnos', color: "#1b1b1b" }
     },
     paragraphs: {
       main: [
@@ -26,8 +26,8 @@ class Main extends Component {
         { text: 'El objetivo es enseñar el contenido que mas pueda y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
       git: [
-        {text: 'Podes seguirme en Git-hub, ver mis repositorios ,clonarlos y trabajar modificandolos o simplemente analizar mi trabajo .Todo lo que conlleve se agradece mucho, tambien podes visitar tanto  mi perfil de Linkedin como miperfil en Codewars , estan en el encabezado de la pagina'},
-        {text: 'Por ahora sigo trabajando en la pagina y todavia no agregamos una base de datos, pero pronto... estar atentos'}
+        { text: 'Podes seguirme en Git-hub, ver mis repositorios ,clonarlos y trabajar modificandolos o simplemente analizar mi trabajo .Todo lo que conlleve se agradece mucho, tambien podes visitar tanto  mi perfil de Linkedin como miperfil en Codewars , estan en el encabezado de la pagina' },
+        { text: 'Por ahora sigo trabajando en la pagina y todavia no agregamos una base de datos, pero pronto... estar atentos' }
       ]
     },
     lists: {
@@ -42,27 +42,61 @@ class Main extends Component {
           { title: 'mongoose', code: 'npm install --save mongoose', href: "https://mongoosejs.com/docs/guide.html" },
           { title: 'create-react-app', code: 'npm install --save create-react-app', href: "https://create-react-app.dev/docs/getting-started/" },
           { title: 'axios', code: 'npm install --save axios', href: "" },
-      
+
         ]
       },
-      git : {
+      git: {
         title: 'Git Links',
-        items:[
-          {title: 'Git profile', code: 'https://github.com/tomaspizarro15', href: "https://github.com/tomaspizarro15" },
-          {title: 'Git Repository', code: 'https://github.com/tomaspizarro15/my-personal-website', href: "https://github.com/tomaspizarro15/my-personal-website" },
+        items: [
+          { title: 'Git profile', code: 'https://github.com/tomaspizarro15', href: "https://github.com/tomaspizarro15" },
+          { title: 'Git Repository', code: 'https://github.com/tomaspizarro15/my-personal-website', href: "https://github.com/tomaspizarro15/my-personal-website" },
         ],
       }
     },
 
+    inputValue : "",
 
   }
+  inputHandler = (event) => {
+    console.log(event.target.value)
+    this.setState({inputValue : event.target.value})
+
+  }
+  receivePost = () => {
+    fetch('http://localhost:8080', {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
+  }
+  sendPost = () => {
+    fetch('http://localhost:8080', {
+      method:'POST',
+      headers: {'Content-Type' : 'application/json'},
+      body: JSON.stringify({
+        title : this.state.inputValue,
+        content: "I made it",
+      })
+    })
+    .then(res => {
+      return res.json()
+      })
+    .then(data => {
+      console.log(data)
+    })
+  }
+
+  
+
+
   render() {
     let phrases = { ...this.state.phrases }
     let paragraphs = { ...this.state.paragraphs }
     let mern = { ...this.state.mernDiagram };
 
     let list = { ...this.state.lists.modules }
-    let git = {...this.state.lists.git}
+    let git = { ...this.state.lists.git }
 
     return (
       <div className="main_page__container">
