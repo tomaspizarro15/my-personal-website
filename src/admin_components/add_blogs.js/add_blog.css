@@ -1,0 +1,10 @@
+.add_blog__container {
+    width: 80%;
+    border: 2px solid black;
+}
+.add_blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
