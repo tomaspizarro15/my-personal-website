@@ -1,10 +1,53 @@
 .add_blog__container {
-    width: 80%;
-    border: 2px solid black;
+    width: 50%;
+
 }
 .add_blog {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 25px 5px 25px 5px;
+    padding: 25px 0 25px 0;
+}
+.add_blog__fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.add_blog label {
+    font-weight: bold;
+    font-size: 22px;
+    margin: 10px 0 10px 0;
+}
+.add_blog input {
+    width: 75%;
+    outline : none; 
+    border: 2px solid #ccc; 
+    text-indent: 5px;
+    padding: 5px;
+    transition:  border-color 250ms ease; 
+}
+.add_blog input:focus {
+    border-color : #212b85;
+    transition:  border-color 250ms ease; 
+}
+.add_blog textarea {
+    text-align: center;
+    width: 90%;
+    height: 20rem;
+    border-radius: 4px;
+    border: 2px solid #ccc;
+    transition: border-color 250ms ease;
+    outline: none;
+}
+.add_blog textarea:focus {
+    border-color: #212b85;
+    transition: border-color 250ms ease;
+}
+.add_section {
+    width: 100%;
+    margin: 25px 0 25px 0;
+    padding: 25px 0 25px 0;
 }

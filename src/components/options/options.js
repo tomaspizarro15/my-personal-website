@@ -1,13 +1,11 @@
-import React from 'react'; 
+import React from 'react';
 import './options.css'
 
 
 
 const Options = (props) => {
-    return(
-        <div className="options_container">
-            
-        </div>
+    return (
+        <option value= {props.title}>{props.title}</option>
     )
 }
 

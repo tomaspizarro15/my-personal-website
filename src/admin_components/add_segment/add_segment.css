@@ -1,0 +1,15 @@
+.add_segment {
+    margin: 15px 0 0 0;
+}
+.add_segment button {
+    margin: 0 10px 0 10px;
+    padding: 5px;
+    width: 35%;
+}
+.add_segment input {
+    padding: 5px;
+    width: 50%;
+}
+.add_segment h1 {
+    font-size: 16px;
+}
