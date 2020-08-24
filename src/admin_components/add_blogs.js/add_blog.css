@@ -27,11 +27,15 @@
     border: 2px solid #ccc; 
     text-indent: 5px;
     padding: 5px;
-    transition:  border-color 250ms ease; 
+    transition:  all 250ms ease; 
 }
 .add_blog input:focus {
     border-color : #212b85;
-    transition:  border-color 250ms ease; 
+    transition:  all 250ms ease; 
+}
+.add_blog input:hover {
+    border-color : #212b85;
+    transition:  all 250ms ease; 
 }
 .add_blog textarea {
     text-align: center;
@@ -45,6 +49,52 @@
 .add_blog textarea:focus {
     border-color: #212b85;
     transition: border-color 250ms ease;
+}
+.add_blog textarea:hover{
+    border-color: #212b85;
+    transition: border-color 250ms ease;
+}
+.add_blog select {
+    width: 50%;
+    padding: 5px;
+    margin: 15px 0 15px 0;
+    border: 2px solid #ccc;
+    color: #2b2b2b;
+    border-radius: 4px;
+    font-weight: bold;
+    outline: none;
+    transition: all 250ms ease-in-out;
+}
+.add_blog select:hover {
+    border-color: #212b85;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+.add_blog select:focus {
+    border-color: #212b85;
+    color: #212b85;
+    transition: all 250ms ease-in-out;
+}
+.add_blog button {
+    width: 25%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #2b2b2b;
+    transition: all 250ms ease-in-out;
+}
+.add_blog button:hover {
+    border-color: #212b85;
+    color: #212b85;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+
+.add_blog option {
+    padding: 5px;
 }
 .add_section {
     width: 100%;

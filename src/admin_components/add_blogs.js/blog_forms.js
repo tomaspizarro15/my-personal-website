@@ -4,6 +4,7 @@ import './add_blog.css';
 
 const BlogForms = (props) => {
     let fields;
+
     switch (props.field.type) {
         case 'input':
            fields = (
@@ -18,7 +19,11 @@ const BlogForms = (props) => {
         case 'select':
            fields = (
             <select>
-
+                {props.field.sections.map((section) => {
+                    return(
+                        <option>{section.title}</option>
+                    )
+                })}
             </select>
            )
             break;
