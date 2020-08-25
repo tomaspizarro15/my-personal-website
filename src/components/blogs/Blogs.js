@@ -5,54 +5,35 @@ import './blogs_card.css';
 
 class Blogs extends Component {
     state = {
-        blogs: [
 
-        ]
+        active: this.props.match.params,
+
+        titulo: {
+
+        },
+        contenido: {
+
+        }
     };
 
 
-    componentDidUpdate() {
 
-        const getBlogs = () => {
+    shouldComponentUpdate(nextState, nextProps) {
 
-            fetch('http://localhost:8080', {
-                method: 'GET',
-            })
-                .then(res => {
-                    return res.json()
-                })
-                .then(blogs => {
-                    console.log(blogs)
-                })
-                .catch(err => {
-                    throw new Error(err)
-                })
-
+        if (nextState.match.params.id !== this.state.active.id || nextState.match.params.blog !== this.state.active.blog) {
+            this.setState({active : nextState.match.params})
+            return true;
         }
 
+        return false
     }
 
+ 
     render() {
-
-        let adminBlog;
-        let isValid = false;
-
-        if (isValid) {
-            adminBlog = (
-                <div className="admin_header__container">
-                    <nav className="admin_header">
-                        <Link to="/admin/add-blog">
-                            Create new blog
-                        </Link>
-                    </nav>
-                </div>
-
-            )
-        }
+        console.log(this.state.active)
 
         return (
             <div className="blogs_container">
-                {adminBlog}
             </div>
         )
     }

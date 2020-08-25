@@ -8,7 +8,8 @@ import Toolbar from './components/toolbar/Toolbar';
 import Footer from './components/footer/footer';
 import ProfileCard from './components/profile_card/ProfileCard';
 import Education from './components/education_page/education';
-import AddBlog from './admin_components/add_blogs.js/add_blog';
+import AddBlog from './admin_components/add_toolbar/add_toolbar';
+import Blogs from './components/blogs/Blogs';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
                 <Route path="/contactos" exact component={Main} />
                 <Route path="/educacion" exact component={Education} />
                 <Route path = "/admin/add-blog" exact component = {AddBlog}/>
+                <Route path = "/blog/:id/:blog" exact component = {Blogs}/>
               </Switch>
             </div>
             <div className="App_side__content">

@@ -1,5 +1,5 @@
 import React from 'react';
-import './add_blog.css';
+import './add_toolbar.css';
 
 
 const BlogForms = (props) => {
@@ -8,20 +8,20 @@ const BlogForms = (props) => {
     switch (props.field.type) {
         case 'input':
            fields = (
-               <input/>
+               <input value= {props.value} onChange={props.change}/>
            )
             break;
         case 'textarea':
            fields = (
-            <textarea></textarea>
+            <textarea  value= {props.value} onChange={props.change}></textarea>
            )
             break;
         case 'select':
            fields = (
-            <select>
+            <select onChange = {props.change}>
                 {props.field.sections.map((section) => {
                     return(
-                        <option>{section.title}</option>
+                        <option value={section.title}>{section.title}</option>
                     )
                 })}
             </select>

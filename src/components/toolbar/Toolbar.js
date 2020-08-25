@@ -18,44 +18,42 @@ class Toolbar extends Component {
                 return res.json()
             })
             .then(data => {
+                data.toolbar.map(section => {
+                    section.status = false; 
+                })
                 this.setState({ sections: data.toolbar })
             })
             .catch(err => {
                 console.log("Failed", err)
             })
     }
-    componentDidUpdate() {
-        console.log("Refreshed")
-    }
+
     activateSection = (i) => {
-        let newSections = { ...this.state.sections }
-        let sectionsArray = [];
-        console.log(newSections)
-        for (let id in newSections) {
-            sectionsArray.push({
-                ...newSections[id]
-            })
-        }
+        let updatedSection = [...this.state.sections]; 
 
-        sectionsArray[i].status = !sectionsArray[i].status;
-        console.log(sectionsArray[i])
-
-        let sections = { ...sectionsArray }
-        this.setState({ sections: sections })
+        updatedSection.map((section , index) => {
+            if(index === i) {
+               section.status = !section.status; 
+            }
+        }) 
+        this.setState({sections : updatedSection})
+        console.log(this.state.sections)
     }
 
     render() {
-
+     
         let sections = [...this.state.sections]
+
 
         return (
             <div className="toolbar_container">
                 <h1>Blogs</h1>
                 <div className="toolbar">
-                    {sections.map(section => {
+                    {sections.map((section, i) => {
                         return (
-                            <ul className="toolbar_section">
-                                <h1 className="toolbar_title">{section.title}</h1>
+                            <ul className="toolbar_section" key = {section._id} > 
+                                <h1 className="toolbar_title" onClick={(event) => this.activateSection(i)}>{section.title}</h1>
+                                <ToolbarItems  _id = {section._id}  items={section.items}  status = {section.status}/>
                             </ul>
                         )
                     })}
