@@ -101,6 +101,13 @@ class AddToolbar extends Component {
                 console.log(promise)
                 const statusBlog = { code: promise.status, status: promise.statusText }
                 this.setState({ statusBlog: statusBlog, blogStatus: true })
+
+                if (promise.status <= 201) {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                }
+
                 return promise.json()
             })
             .catch(err => {
@@ -127,7 +134,10 @@ class AddToolbar extends Component {
             return promise.json();
         })
             .then(response => {
-                this.setState({ responseMessage: response, status: true, newSection: "" })
+                const newFields = [...this.state.fields];
+
+                newFields[0].value = "";
+                this.setState({ responseMessage: response, status: true, newSection: "", fields: newFields })
             })
             .catch(err => {
                 console.log(err)
@@ -136,9 +146,7 @@ class AddToolbar extends Component {
         return statusCode;
 
     }
-    utSectionHandler = (event) => {
-        this.setState({ newSection: event.target.value })
-    }
+
     blogInputHandler = (event, i) => {
         const newFields = [...this.state.fields];
 
@@ -164,7 +172,7 @@ class AddToolbar extends Component {
                 <form className="add_blog" onSubmit={(event) => this.submitBlog(event)}>
                     {fields.map((field) => {
                         return (
-                            <BlogForms  key={fields.id} value={field.value} field={field} change={(event) => this.blogInputHandler(event, field.id)} select={field.title} />
+                            <BlogForms key={fields.id} value={field.value} field={field} change={(event) => this.blogInputHandler(event, field.id)} select={field.title} />
                         )
                     })}
                     <button type="submit">Create blog</button>

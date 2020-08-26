@@ -28,27 +28,33 @@ class Education extends Component {
         paragraph: {
             title : {message : 'Educacíon' , color : '#212b85'},
             main:[
-                {text: 'Mi educación el la programacion comenzo en la UTN-FRM en mendoza, estudie alli durante 6 meses, sobre bases de la programación , bases de datos relacionales, Java y C'},
-                {text: 'Despues me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]'},
-                {text: 'Me eduque en MERN Developing , en Udemy por parte de Academind  '}
+                { id : "p01" , text: 'Mi educación el la programacion comenzo en la UTN-FRM en mendoza, estudie alli durante 6 meses, sobre bases de la programación , bases de datos relacionales, Java y C'},
+                { id : "p02" , text: 'Despues me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]'},
+                { id : "p03" , text: 'Me eduque en MERN Developing , en Udemy por parte de Academind  '}
             ]
         },
         educacionPrevia: {
             title: 'Educación previa',
             items:[
-                {text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Perez Esquivel Mendoza , Argentina'}
+                {id: "p04" ,text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Perez Esquivel Mendoza , Argentina'}
+            ]
+        },
+        idiomas: {
+            title: 'Idiomas',
+            items:[
+                {id :"p05" , text: 'Hablo 3 idiomas , Español , Ingles y Portugues , además en 2021 aprenderé Frances'}
             ]
         },
         lists: {
             academindCourses: {
                 title: '',
                 realizados: [
-                    { title: 'Node', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
-                    { title: 'React', code: 'React - The Complete Guide (incl Hooks, React Router, Redux)', href: "https://www.udemy.com/course/react-the-complete-guide-incl-redux" },
+                    {id : "list01" ,  title: 'Node', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    {id : "list02" ,  title: 'React', code: 'React - The Complete Guide (incl Hooks, React Router, Redux)', href: "https://www.udemy.com/course/react-the-complete-guide-incl-redux" },
                 ],
                 noRealizados: [
-                    { title: 'Mongodb', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
-                    { title: 'React Native', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    {id : "list03" ,  title: 'Mongodb', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    {id : "list04" ,  title: 'React Native', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
                 ]
             }
         }
@@ -69,6 +75,7 @@ class Education extends Component {
                 <Listate listado = {lists.academindCourses.realizados} title ={phrases.cursosRealizados.message} icon = {icon}/>
                 <Listate listado = {lists.academindCourses.noRealizados} title = {phrases.cursosNoRealizados.message} icon = {icon}/>
             <TextComponent paragraphs = {this.state.educacionPrevia.items} title = {this.state.educacionPrevia.title}/>
+            <TextComponent paragraphs = {this.state.idiomas.items} title = {this.state.idiomas.title}/>
             </div>
         )
     }

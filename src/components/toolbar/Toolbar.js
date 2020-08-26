@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './toolbar.css';
 import ToolbarItems from './toolbar_items';
 
-class Toolbar extends Component {
+class Toolbar extends PureComponent {
 
     state = {
         sections: []

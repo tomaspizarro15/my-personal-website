@@ -1,0 +1,30 @@
+.error_component__container {
+    height: 100%;
+    width: 100%;
+    padding: 5vw 0 5vw 0;
+}
+.error_p {
+    font-size: 35px;
+    margin: 20px 0 20px 0;
+}
+.error_code {
+    color: red;
+    font-size: 60px;
+    margin: 30px 0 30px 0;
+}
+.error_button {
+    padding: 25px;
+    width: 25%;
+    border: 2px solid #ccc;
+    color: gray;
+    background-color: white;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: all 250ms ease;
+}
+.error_button:hover {
+    border: 2px solid #212b85;
+    color: #212b85;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
