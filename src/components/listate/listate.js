@@ -13,9 +13,9 @@ const Listate = (props) => {
             <Phrase phrase={phrase} />
             <div className="list_container">
                 <ul className="list">
-                    {props.listado.map((elemento, i) => {
+                    {props.listado.map(elemento => {
                         return (
-                            <li className="list_item" key={i} onMouseEnter={props.hover} onMouseLeave={props.hover}>
+                            <li className="list_item" key={elemento.id} onMouseEnter={props.hover} onMouseLeave={props.hover}>
                                 <div className="list_item_text">
                                     <h1>{elemento.title}:</h1>
                                     <p>{elemento.code}</p>

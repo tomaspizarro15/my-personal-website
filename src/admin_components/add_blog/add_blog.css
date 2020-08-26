@@ -1,0 +1,54 @@
+.add_segment__button {
+    width: 100%;
+    background-color: #212b85;
+}
+.blog_segment__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    width: 100%;
+    border: 2px solid #212b85;
+    border-radius: 8px;
+    margin: 20px 0 20px 0;
+}
+.blog_segment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 97.5%;
+    width: 97.5%;
+    border-radius: 8px;
+}
+.segment {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    border: 2px solid #ccc;
+    margin: 2px;
+ 
+}
+.segment  p {
+    font-size: 16px;
+}
+.segment.title {
+    height: 10%;
+}
+.segment.content {
+    height: 80%;
+}
+.segment.send {
+    height: 10%;
+}
+.segment_head {
+    width: 10%;
+}
+.segment_head.content {
+    
+}
+.segment_head.title {
+    text-align: center;
+    height: 100%;
+    background-color: black;
+}

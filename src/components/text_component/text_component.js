@@ -11,9 +11,10 @@ const TextComponent = (props) => {
         <div className="text_component__container">
             <div className="text_component">
                 <h1 className="text_component__title">{props.title}</h1>
-                {props.paragraphs.map((paragraph, i) => {
+                {props.paragraphs.map((paragraph) => {
+                    console.log( "TEXT COMPONENT PARAGRAPH ID", paragraph.id , "AT:" , props.title)
                     return (
-                        <p key={i} className="text_component__paragraph">{paragraph.text}</p>
+                        <p key={paragraph.id} className="text_component__paragraph">{paragraph.text}</p>
                     )
                 })}
             </div>

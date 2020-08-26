@@ -8,10 +8,10 @@ class Header extends Component {
 
   state = {
     navigationTools: [
-      { title: 'Educacion', path: '/educacion' },
-      { title: 'Sobre mi', path: '/biografia' },
-      { title: 'Contactarse', path: '/contacto' },
-      { title: 'Conocimientos', path: '/contacto' },
+      { id :"tool1" ,title: 'Educacion', path: '/educacion' },
+      { id :"tool2" ,title: 'Sobre mi', path: '/biografia' },
+      { id :"tool3" ,title: 'Contactarse', path: '/contacto' },
+      { id :"tool4" ,title: 'Conocimientos', path: '/contacto' },
     ],
   }
   render() {
@@ -28,9 +28,9 @@ class Header extends Component {
           </div>
           <div className="header_right">
             <ul className="header_tools">
-              {this.state.navigationTools.map((tool, i) => {
+              {this.state.navigationTools.map(tool => {
                 return (
-                  <HeaderTools key={i} title={tool.title} path={tool.path} />
+                  <HeaderTools key={tool.id} title={tool.title} path={tool.path} />
                 )
               })}
             </ul>

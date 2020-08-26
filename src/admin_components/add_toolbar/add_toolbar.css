@@ -21,6 +21,11 @@
     font-size: 22px;
     margin: 10px 0 10px 0;
 }
+.add_blog p {
+    color: #212b85;
+    font-size: 22px;
+    margin: 10px 0 10px 0;
+}
 .add_blog input {
     width: 75%;
     outline : none; 

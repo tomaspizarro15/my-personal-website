@@ -8,9 +8,9 @@ class ProfileCard extends Component{
 
     state = {
         logos : [
-            {alt : 'git' , src: gitLogo},
-            {alt : 'linkedin' , src: linkLogo},
-            {alt : 'gmail' , src: gmailLogo},
+            { id :"logo01" , alt : 'git' , src: gitLogo},
+            { id :"logo02" , alt : 'linkedin' , src: linkLogo},
+            { id :"logo03" , alt : 'gmail' , src: gmailLogo},
         ],
         links : [
 
@@ -27,9 +27,9 @@ class ProfileCard extends Component{
                 <p>Tomás Pizarro</p>
             </div>
             <div className="profile_card__media">
-               {this.state.logos.map((logo , i) => {
+               {this.state.logos.map((logo) => {
                 return(
-                    <div key = {i} className ="profile_card__media_image">
+                    <div key = {logo.id} className ="profile_card__media_image">
                      <img src= {logo.src} alt = {logo.alt}></img>
                     </div>
                 )

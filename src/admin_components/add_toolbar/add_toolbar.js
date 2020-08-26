@@ -5,16 +5,12 @@ import BlogForms from './blog_forms';
 import AddSegment from '../add_segment/add_segment';
 import ErrorHandler from '../../error/error_handler';
 
-
-
-
-class AddBlog extends Component {
-
+class AddToolbar extends Component {
     state = {
         phrases: [
-            { message: "Crear nueva sección ", color: "#212b185" }
+            { message: "Crear nueva sección ", color: "#212b85" },
+            { message: "Crear nuevo apartado", color: "#212b85" },
         ],
-        title: { message: "Crear nuevo blog", color: "black" },
         options: [
             { title: "JavaScript" },
             { title: "React" },
@@ -28,27 +24,24 @@ class AddBlog extends Component {
 
         fields: [
             {
-                title: "Titulo del blog",
+                title: "Titulo del apartado",
                 type: "input",
                 value: "",
                 placeholder: "Blog title"
-
             },
             {
-                title: "Seccion del blog",
+                title: "Seccion del apartado",
                 type: "select",
                 value: "",
                 sections: []
             }
-
         ],
-
         newSection: "",
         responseMessage: "",
         statusCode: {},
         statusBlog: {},
         status: false,
-        blogStatus : false,
+        blogStatus: false,
 
 
     }
@@ -64,8 +57,8 @@ class AddBlog extends Component {
             })
             .then(data => {
                 const fields = [...this.state.fields]
-                fields[1].sections = data.toolbar;
-                fields[1].sections.unshift({
+                fields[fields.length - 1].sections = data.toolbar;
+                fields[fields.length - 1].sections.unshift({
                     title: "Seleccione una opción"
                 })
                 this.setState({ fields: fields })
@@ -107,7 +100,7 @@ class AddBlog extends Component {
             .then(promise => {
                 console.log(promise)
                 const statusBlog = { code: promise.status, status: promise.statusText }
-                this.setState({ statusBlog: statusBlog  ,blogStatus : true})
+                this.setState({ statusBlog: statusBlog, blogStatus: true })
                 return promise.json()
             })
             .catch(err => {
@@ -143,13 +136,9 @@ class AddBlog extends Component {
         return statusCode;
 
     }
-
-    inputSectionHandler = (event) => {
+    utSectionHandler = (event) => {
         this.setState({ newSection: event.target.value })
     }
-
-
-
     blogInputHandler = (event, i) => {
         const newFields = [...this.state.fields];
 
@@ -158,21 +147,24 @@ class AddBlog extends Component {
         this.setState({ fields: newFields })
 
     }
-
     render() {
-
         let fields = [...this.state.fields];
+        fields.map((field, i) => {
+
+            field.id = i;
+
+        })
+
+        console.log(fields)
+
         let message = { ...this.state.title }
         return (
             <div className="add_blog__container">
-                <Phrase phrase={message} />
+                <Phrase phrase={this.state.phrases[1]} />
                 <form className="add_blog" onSubmit={(event) => this.submitBlog(event)}>
-                    {fields.map((field, i) => {
+                    {fields.map((field) => {
                         return (
-                            <React.Fragment>
-                                <label>{field.title}</label>
-                                <BlogForms value={field.value} field={field} change={(event) => this.blogInputHandler(event, i)} select={field.title} />
-                            </React.Fragment>
+                            <BlogForms  key={fields.id} value={field.value} field={field} change={(event) => this.blogInputHandler(event, field.id)} select={field.title} />
                         )
                     })}
                     <button type="submit">Create blog</button>
@@ -188,4 +180,4 @@ class AddBlog extends Component {
     }
 }
 
-export default AddBlog; 
+export default AddToolbar; 

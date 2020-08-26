@@ -8,8 +8,9 @@ import Toolbar from './components/toolbar/Toolbar';
 import Footer from './components/footer/footer';
 import ProfileCard from './components/profile_card/ProfileCard';
 import Education from './components/education_page/education';
-import AddBlog from './admin_components/add_toolbar/add_toolbar';
 import Blogs from './components/blogs/Blogs';
+import AddToolbar from './admin_components/add_toolbar/add_toolbar';
+import AddBlog from './admin_components/add_blog/add_blog';
 
 class App extends Component {
 
@@ -25,6 +26,8 @@ class App extends Component {
                 <Route path="/" exact component={Main} />
                 <Route path="/contactos" exact component={Main} />
                 <Route path="/educacion" exact component={Education} />
+                <Route path = "/admin/add-segment" exact component = {AddToolbar}/>
+                <Route path = "/admin/add-blog?edit=true" exact component = {AddBlog}/>
                 <Route path = "/admin/add-blog" exact component = {AddBlog}/>
                 <Route path = "/blog/:id/:blog" exact component = {Blogs}/>
               </Switch>
@@ -38,7 +41,7 @@ class App extends Component {
         </BrowserRouter>
       </div>
     );
-  }
+  } 
 }
 
 export default App;
