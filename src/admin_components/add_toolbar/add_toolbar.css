@@ -1,5 +1,5 @@
 .add_blog__container {
-    width: 50%;
+    width: 75%;
 
 }
 .add_blog {
@@ -96,8 +96,6 @@
     transition: all 250ms ease-in-out;
     cursor: pointer;
 }
-
-
 .add_blog option {
     padding: 5px;
 }
@@ -105,4 +103,17 @@
     width: 100%;
     margin: 25px 0 25px 0;
     padding: 25px 0 25px 0;
+}
+.add_new_segment {
+    width: 100%;
+    margin: 20px 0 20px 0;
+    background-color: #212b85;
+}
+@media(max-width: 768px) {
+    .add_blog__container {
+        width: 95%;
+    }
+    .add_blog button {
+        width: 95%;
+    }
 }

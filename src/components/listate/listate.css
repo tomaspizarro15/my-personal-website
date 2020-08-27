@@ -64,9 +64,16 @@
 
 @media(max-width: 768px) {
     .list_container {
-        width: 100%;
+        width: 90%;
+    }
+    .list_item {
+        width: 90%;
+        padding: 2%;
     }
     .list_item p {
         display: none;
+    }
+    .list_item_icon {
+        width: 0px;
     }
 }

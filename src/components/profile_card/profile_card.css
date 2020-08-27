@@ -72,7 +72,7 @@
 
 @media(max-width : 728px){
     .profile_card{
-        width: 80%;
+        width: 90%;
     }
     .profile_card__photo{
         width: 15rem;

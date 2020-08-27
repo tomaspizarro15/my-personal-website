@@ -112,10 +112,13 @@
          width: 100%;
          height: 35rem;
      }
+     .diagram_item{
+         width: 5rem;
+     }
      .diagram_info__title {
          font-size: 6vmin;
      }
      .diagram_info__text {
-        font-size: 4.5vmin;
+        font-size: 5vmin;
      }
  }

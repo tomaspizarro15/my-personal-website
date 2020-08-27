@@ -3,7 +3,6 @@
     flex-direction: row;
     align-items: center;
     width: 90%;
-    height: 20rem;
     padding:  0 25px 0 25px;
 }
 .card_logo {
@@ -18,8 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    width: 100%;
+    height: 12vw;
+    width: 10vw;
 
 }
 .card_logo__image img {
@@ -56,4 +55,26 @@
 .card_info__text {
     width: 75%;
     font-size: 20px;
+}
+@media(max-width : 768px) {
+    .card_container {
+        flex-direction: column;
+    }
+    .card_logo {
+        width: 100%;
+        height: 200px;
+        margin: 20px 0 20px 0;
+    }
+    .card_info {
+        width: 100%;
+        border-left: 0px;
+        border-top : 1px solid #212B85;
+        border-bottom : 1px solid #212B85;
+    }
+    .card_logo__image {
+        height: 10rem;
+    }
+    .card_info__text {
+        width: 100%;
+    }
 }
