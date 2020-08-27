@@ -44,7 +44,6 @@ class App extends Component {
                   : (<Redirect to="/" />)}
                 <Route path="*" exact component={My404Component} />
               </Switch>
-
             </div>
             <div className="App_side__content">
               <ProfileCard />

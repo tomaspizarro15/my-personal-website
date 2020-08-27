@@ -9,10 +9,10 @@ class Header extends PureComponent {
 
   state = {
     navigationTools: [
-      { id :"tool1" ,title: 'Educacion', path: '/educacion' },
-      { id :"tool2" ,title: 'Sobre mi', path: '/biografia' },
-      { id :"tool3" ,title: 'Contactarse', path: '/contacto' },
-      { id :"tool4" ,title: 'Conocimientos', path: '/contacto' },
+      { id: "tool1", title: 'Educacion', path: '/educacion' },
+      { id: "tool2", title: 'Sobre mi', path: '/biografia' },
+      { id: "tool3", title: 'Contactarse', path: '/contacto' },
+      { id: "tool4", title: 'Conocimientos', path: '/contacto' },
     ],
   }
   render() {
@@ -21,7 +21,7 @@ class Header extends PureComponent {
         <nav className="header">
           <div className="header_left">
             <Link className="header_home" to="/">
-            <HomeButton src={Home_Logo} alt="home"/>
+              <HomeButton src={Home_Logo} alt="home" />
             </Link>
           </div>
           <div className="header_void">

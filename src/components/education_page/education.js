@@ -26,56 +26,54 @@ class Education extends Component {
             }
         },
         paragraph: {
-            title : {message : 'Educacíon' , color : '#212b85'},
-            main:[
-                { id : "p01" , text: 'Mi educación el la programacion comenzo en la UTN-FRM en mendoza, estudie alli durante 6 meses, sobre bases de la programación , bases de datos relacionales, Java y C'},
-                { id : "p02" , text: 'Despues me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]'},
-                { id : "p03" , text: 'Me eduque en MERN Developing , en Udemy por parte de Academind  '}
+            title: { message: 'Educacíon', color: '#212b85' },
+            main: [
+                { id: "p01", text: 'Mi educación el la programacion comenzo en la UTN-FRM en mendoza, estudie alli durante 6 meses, sobre bases de la programación , bases de datos relacionales, Java y C' },
+                { id: "p02", text: 'Despues me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]' },
+                { id: "p03", text: 'Me eduque en MERN Developing , en Udemy por parte de Academind  ' }
             ]
         },
         educacionPrevia: {
             title: 'Educación previa',
-            items:[
-                {id: "p04" ,text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Perez Esquivel Mendoza , Argentina'}
+            items: [
+                { id: "p04", text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Perez Esquivel Mendoza , Argentina' }
             ]
         },
         idiomas: {
             title: 'Idiomas',
-            items:[
-                {id :"p05" , text: 'Hablo 3 idiomas , Español , Ingles y Portugues , además en 2021 aprenderé Frances'}
+            items: [
+                { id: "p05", text: 'Hablo 3 idiomas , Español , Ingles y Portugues , además en 2021 aprenderé Frances' }
             ]
         },
         lists: {
             academindCourses: {
                 title: '',
                 realizados: [
-                    {id : "list01" ,  title: 'Node', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
-                    {id : "list02" ,  title: 'React', code: 'React - The Complete Guide (incl Hooks, React Router, Redux)', href: "https://www.udemy.com/course/react-the-complete-guide-incl-redux" },
+                    { id: "list01", title: 'Node', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    { id: "list02", title: 'React', code: 'React - The Complete Guide (incl Hooks, React Router, Redux)', href: "https://www.udemy.com/course/react-the-complete-guide-incl-redux" },
                 ],
                 noRealizados: [
-                    {id : "list03" ,  title: 'Mongodb', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
-                    {id : "list04" ,  title: 'React Native', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    { id: "list03", title: 'Mongodb', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
+                    { id: "list04", title: 'React Native', code: 'NodeJS - The Complete Guide(MVC, REST APIs ,GraphQL ,Deno)', href: "https://www.udemy.com/course/nodejs-the-complete-guide" },
                 ]
             }
         }
-
     };
-
     render() {
 
         let phrases = { ...this.state.phrases }
-        let paragraphs ={...this.state.paragraph}
+        let paragraphs = { ...this.state.paragraph }
         let academindCard = { ...this.state.cards.academind }
-        let lists = {...this.state.lists}
+        let lists = { ...this.state.lists }
         return (
             <div className="education_page">
-            <TextComponent paragraphs = {paragraphs.main} title = {paragraphs.title.message}/>
+                <TextComponent paragraphs={paragraphs.main} title={paragraphs.title.message} />
                 <Phrase phrase={phrases.head} />
                 <Card card={academindCard} />
-                <Listate listado = {lists.academindCourses.realizados} title ={phrases.cursosRealizados.message} icon = {icon}/>
-                <Listate listado = {lists.academindCourses.noRealizados} title = {phrases.cursosNoRealizados.message} icon = {icon}/>
-            <TextComponent paragraphs = {this.state.educacionPrevia.items} title = {this.state.educacionPrevia.title}/>
-            <TextComponent paragraphs = {this.state.idiomas.items} title = {this.state.idiomas.title}/>
+                <Listate listado={lists.academindCourses.realizados} title={phrases.cursosRealizados.message} icon={icon} />
+                <Listate listado={lists.academindCourses.noRealizados} title={phrases.cursosNoRealizados.message} icon={icon} />
+                <TextComponent paragraphs={this.state.educacionPrevia.items} title={this.state.educacionPrevia.title} />
+                <TextComponent paragraphs={this.state.idiomas.items} title={this.state.idiomas.title} />
             </div>
         )
     }
