@@ -4,7 +4,7 @@ import Phrase from '../../components/phrases/phrases';
 import BlogForms from './blog_forms';
 import AddSegment from '../add_segment/add_segment';
 import ErrorHandler from '../../error/error_handler';
-
+import { v4 as uuidv4 } from 'uuid';
 class AddToolbar extends Component {
     state = {
         phrases: [
@@ -126,6 +126,7 @@ class AddToolbar extends Component {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
+                id : uuidv4(),
                 title: this.state.newSection,
             })
         }).then(promise => {
@@ -175,7 +176,7 @@ class AddToolbar extends Component {
                             <BlogForms key={fields.id} value={field.value} field={field} change={(event) => this.blogInputHandler(event, field.id)} select={field.title} />
                         )
                     })}
-                    <button type="submit">Create blog</button>
+                    <button className="add_blog_btn" type="submit">Create blog</button>
                     <ErrorHandler error={this.state.statusBlog} status={this.state.blogStatus} />
                 </form>
                 <div className="add_section">

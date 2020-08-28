@@ -1,0 +1,63 @@
+.modal_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 35rem;
+    position: fixed;
+    opacity: 1;
+    transition: all 250ms ease;
+}
+.modal_container.off {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease;
+
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 20rem;
+    background-color: #212b85;
+    box-shadow: 0 0 20px -5px;
+    border-radius: 20px;
+}
+.modal_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    height: 20%;
+}
+.modal_title_msg {
+    width: 95%;
+}
+.modal_title_msg p {
+    font-size: 24px;
+    color: white;
+}
+.modal_title_close button{
+    width: 40px;
+    height: 40px;
+    border-radius: 32px;
+    border: none;
+    background-color: red;
+    font-weight: bold;
+}
+.modal_button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 70%;
+    width: 100%;
+}
+.modal_button button {
+    height: 20%;
+    width: 50%;
+    border-radius: 16px;
+    border: 0;
+    outline: 0;
+}

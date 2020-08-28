@@ -7,7 +7,7 @@ const AddSegment = (props) => {
             <h1>Nombre de la seccion</h1>
             <form onSubmit={props.submit}>
                 <input onChange={props.change} value = {props.value} />
-                <button type="submit">Add segment</button>
+                <button className="add_blog_btn" type="submit">Add segment</button>
             </form>
 
         </div>
