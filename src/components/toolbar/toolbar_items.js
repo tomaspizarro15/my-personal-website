@@ -8,7 +8,6 @@ const ToolbarItems = (props) => {
     if (!props.status) {
         activeStyle = "toolbar_item hidden"
     }
-    console.log(props.items);
     return (
        
         <React.Fragment>
