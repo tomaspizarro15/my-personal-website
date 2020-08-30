@@ -76,7 +76,7 @@ class Diagram extends Component {
                         return (
                             <div className="item_container" key={item.id}>
                                 <DiagramLogo click={() => { this.activateDiagram(item.id) }} item={item} />
-                                <DiagramItems status={item.status} color={item.color} />
+                                <DiagramItems  key ={item.id} status={item.status} color={item.color} />
                             </div>
                         )
                     })}

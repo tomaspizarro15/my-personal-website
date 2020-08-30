@@ -6,6 +6,7 @@ import BlogSegment from './blog_segment';
 import { v4 as uuidv4 } from 'uuid';
 import Modal from '../../util/modal/modal';
 import Spacer from '../../util/spacer/spacer';
+import BlogPreview from './blog_preview/blog_preview';
 
 
 class AddBlog extends Component {
@@ -33,13 +34,11 @@ class AddBlog extends Component {
         blog: {
             titulo: "",
             seccion: "",
-            segmentos: [
-                {}
-            ]
+            segmentos: []
         },
         segmentos: [],
-        
-        sectionItems : [],
+
+        sectionItems: [{ title: "seleccione un apartado" }],
 
         modal: { status: false, message: "¿Esta seguro de que quiere subir el blog?", height: 20, type: "" },
     }
@@ -56,10 +55,12 @@ class AddBlog extends Component {
                 return res.json()
             })
             .then(data => {
+
                 const fields = [...this.state.opciones]
-                fields[fields.length - 1].sections = data.toolbar;
+                let items =
+                    fields[fields.length - 1].sections = data.toolbar;
                 fields[fields.length - 1].sections.unshift({
-                    title: "Seleccione una opción"
+                    title: "Seleccione una opción", _id: uuidv4(), items: [{ title: "seleccione un apartado" }]
                 })
                 this.setState({ opciones: fields })
             })
@@ -68,24 +69,25 @@ class AddBlog extends Component {
             })
 
     }
+
+
+    //SECTION METHODS
+
     addSegment = () => {
         const newSegment = {
             id: uuidv4(),
             fields: [
-                {
-                    id: uuidv4(), title: "Blog Title", type: "input", value: "",
-                },
-                {
-                    id: uuidv4(), title: "Blog Content", type: "textarea", value: "",
-                }]
+                { id: uuidv4(), title: "Blog Title", type: "input", value: "" },
+                { id: uuidv4(), title: "Blog Content", type: "textarea", value: "" },
+            ]
         }
         const segments = [...this.state.segmentos]
-
         segments.push(
             newSegment
         )
         this.setState({ segmentos: segments })
     }
+
 
     deleteSection = (index) => {
         const segments = [...this.state.segmentos]
@@ -98,6 +100,8 @@ class AddBlog extends Component {
         this.setState({ segmentos: segments })
     }
 
+    //MODAL METHOD (UI/UX)
+
     modalActivate = (event) => {
         event.preventDefault();
         let modalUpdated = { ...this.state.modal }
@@ -109,115 +113,137 @@ class AddBlog extends Component {
         this.setState({ modal: modalUpdated })
     }
 
-    checkBlog = () => {
+    // UX VALIDATION (blog methods)
 
-        console.log()
-
+    validateBlog = () => {
         let isValid = true;
-
         isValid = this.state.blog.segmentos.length >= 1 && isValid;
-
-        console.log("valid?", isValid)
         isValid = this.state.opciones[0].value.length >= 6 && isValid;
+        isValid = this.state.opciones[1].value !== "" && isValid
 
-        console.log("valid?", isValid)
-        isValid = this.state.opciones[1].value !== "" && isValid;
-        console.log("valid?", isValid)
-
+        this.handleBlog(isValid)
+    }
+    handleBlog = (isValid) => {
         const modal = { ...this.state.modal }
         modal.status = true;
-
         if (isValid) {
             modal.message = "¡Blog Creado correctamente!";
             modal.type = 'good'
-
-            this.fetchBlog();
-
+            this.fetchBlogToAPI();
         } else {
             modal.message = "ERROR: Datos invalidos!";
             modal.type = 'error'
         }
-
         this.setState({ modal: modal })
     }
 
-    fetchBlog = () => {
+    //fetching method into localhost:8080
+
+    fetchBlogToAPI = () => {
         console.log("This method will fetch my blog")
     }
+    // INPUT HANDLERS 
 
-
-    blogInputHandler = (event, index) => {
+    segmentInputHandler = (event, index) => {
         const newSegment = [...this.state.segmentos]
         if (event.target.toString().includes("TextArea")) {
             newSegment[index].fields[1].value = event.target.value;
         } else {
             newSegment[index].fields[0].value = event.target.value;
         }
-
         this.setState({ segmentos: newSegment })
-        console.log(this.state.segmentos)
+
     }
 
-    fetchSection = (title) => {
-        fetch('http://localhost:8080/toolbar/' + title, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(promise => {
-            return promise.json()
-        })
-        .then(response => response.data)
-        .then(data => {
-            this.setState({sectionItems : data})
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
+    segmentSubmitHandler = (event, index) => {
+        const newSegments = [...this.state.segmentos]
+        const segmentFields = newSegments[index].fields;
 
+        const newSegment = { title: segmentFields[0].value, content: segmentFields[1].value }
+
+        const newBlog = { ...this.state.blog }
+        newBlog.segmentos.push(newSegment);
+
+        newSegments.splice(index, 1);
+
+        this.setState({ blog: newBlog, segmentos: newSegments })
+    }
 
     sectionInputHandler = (event, i) => {
-
         let newOpciones = [...this.state.opciones];
         if (event.target.value === "Seleccione una opción") {
             newOpciones[i].value = "";
         } else {
             newOpciones[i].value = event.target.value;
         }
-        this.setState({ opciones: newOpciones })
-
-        if(newOpciones[i].type === 'select' && newOpciones[i].value !== "" ) {
-            this.fetchSection(newOpciones[i].value)
-        }
-
+        const sectionItems = this.assingItemsToSection(newOpciones)
+        this.setState({ opciones: newOpciones, sectionItems: sectionItems })
     }
 
-   
+    assingItemsToSection = (options) => {
+        let sectionItems;
+        options.map(opcion => {
+            if (opcion.sections) {
+                opcion.sections.map(section => {
+                    if (opcion.value === section.title) {
+                        sectionItems = section.items;
+                    }
+                })
+            }
+        })
+        return sectionItems;
+    }
     render() {
+        let items = []
+        if (this.state.sectionItems) {
+            items = [...this.state.sectionItems]
+        }
         let opciones = [...this.state.opciones];
-        const modal = { ...this.state.modal }
+        const modal = { ...this.state.modal };
+        const blog = { ...this.state.blog }
         return (
             <div className="add_blog__container">
-                <Modal height={modal.height} status={modal.status} message={modal.message} type={modal.type} logo={null} click={this.checkBlog} close={this.modalActivate} />
+                <Modal height={modal.height} status={modal.status} message={modal.message} type={modal.type} logo={null} click={this.validateBlog} close={this.modalActivate} />
                 <Phrase phrase={{ message: "Añadir un Blog", color: "#212b85" }} />
+
                 <form className="add_blog" onSubmit={null}>
                     {opciones.map((opcion, i) => {
                         return (
-                            <BlogForms key={opcion.id} field={opcion} value={opcion.value} change={(event) => { this.sectionInputHandler(event, i) }} />
+                            <BlogForms
+                                key={opcion.id}
+                                field={opcion}
+                                value={opcion.value}
+                                change={(event) => { this.sectionInputHandler(event, i) }}
+                            />
                         )
                     })}
+                    <div className="add_blog__apartado">
+                        <select>
+                            {items.map(item => {
+                                return (
+                                    <option value={item.value}>{item.title}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
                     <Spacer height="50px" />
-
+                    <BlogPreview blog={blog} />
                     {this.state.segmentos.map((segmento, i) => {
                         return (
-                            <BlogSegment fields={segmento.fields} key={segmento.id} delete={() => { this.deleteSection(i) }} create={() => { this.createSection(i) }} change={(event) => { this.blogInputHandler(event, i) }} />
+                            <BlogSegment
+                                key={segmento.id}
+                                fields={segmento.fields}
+                                index={i}
+                                delete={() => { this.deleteSection(i) }}
+                                create={() => { this.createSection(i) }}
+                                submit={(event) => { this.segmentSubmitHandler(event, i) }}
+                                change={(event) => { this.segmentInputHandler(event, i) }} />
                         )
                     })}
                     <button className="plus_button" type="button" onClick={this.addSegment}>+</button>
                     <button type="submit" className="submit_blog__button" onClick={(event) => { this.modalActivate(event) }}>Create Blog</button>
+                    <Spacer height="50px" />
                 </form>
-                <Spacer height="50px" />
             </div>
         )
     }

@@ -21,7 +21,7 @@ const BlogSegment = (props) => {
                 })}
 
                 <div className="segment_foot">
-                    <button className="add_section_btn" type="button" onClick={props.create}>Done!</button>
+                    <button className="add_section_btn" type="button" onClick={props.submit}>Done!</button>
                     <button className="delete_section_btn" type="button" onClick={props.delete}>X</button>
                 </div>
             </div>

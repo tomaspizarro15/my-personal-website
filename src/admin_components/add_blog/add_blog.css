@@ -2,6 +2,9 @@
     width: 100%;
     background-color: #212b85;
 }
+.add_blog__apartado {
+    width: 100%;
+}
 .blog_segment__container {
     display: flex;
     flex-direction: column;
@@ -20,7 +23,7 @@
     height: 100%;
     width: 75%;
     border-radius: 8px;
-   
+  
 }
 .segment_fields{
     display: flex;

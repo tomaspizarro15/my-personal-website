@@ -16,12 +16,12 @@
     align-items: center;
     justify-content: center;
 }
-.add_blog label {
+.add_blog_label {
     font-weight: bold;
     font-size: 22px;
     margin: 10px 0 10px 0;
 }
-.add_blog p {
+.add_blog_paragraph {
     color: #212b85;
     font-size: 22px;
     margin: 10px 0 10px 0;

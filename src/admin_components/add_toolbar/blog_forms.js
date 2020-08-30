@@ -8,7 +8,7 @@ const BlogForms = (props) => {
         case 'input':
             fields = (
                 <React.Fragment>
-                    <p>{props.field.title}</p>
+                    <p className="add_blog_paragraph">{props.field.title}</p>
                     <input value={props.value} onChange={props.change} />
                 </React.Fragment>
             )
@@ -16,7 +16,7 @@ const BlogForms = (props) => {
         case 'textarea':
             fields = (
                 <React.Fragment>
-                    <p>{props.field.title}</p>
+                    <p className="add_blog_paragraph">{props.field.title}</p>
                     <textarea value={props.value} onChange={props.change}></textarea>
                 </React.Fragment>
             )
@@ -24,7 +24,7 @@ const BlogForms = (props) => {
         case 'select':
             fields = (
                 <React.Fragment>
-                    <p>{props.field.title}</p>
+                    <p className="add_blog_paragraph">{props.field.title}</p>
                     <select onChange={props.change}>
                         {props.field.sections.map((section) => {
                             return (

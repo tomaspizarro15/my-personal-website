@@ -28,7 +28,7 @@ class Header extends PureComponent {
 
           </div>
           <div className="header_right">
-            <ul className="header_tools">
+            <ul className="header_tools"> 
               {this.state.navigationTools.map(tool => {
                 return (
                   <HeaderTools key={tool.id} title={tool.title} path={tool.path} />
