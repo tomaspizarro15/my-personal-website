@@ -16,6 +16,10 @@
     border: 1px solid #ccc;
     padding: 15px 0 15px 0;
 }
+.blog_title {
+    color:  #212b85;
+    font-size: 32px;
+}
 .blog_segment{
     display: flex;
     flex-direction: column;

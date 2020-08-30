@@ -29,11 +29,22 @@ class AddBlog extends Component {
                 sections: [
 
                 ]
+            },
+            {
+                id: "1O92UO7781223U",
+                title: "Apartado del blog",
+                type: "select",
+                value: "",
+                sections: [
+
+                ]
             }
         ],
         blog: {
+            sectionId: "",
             titulo: "",
             seccion: "",
+            apartado:"",
             segmentos: []
         },
         segmentos: [],
@@ -55,11 +66,9 @@ class AddBlog extends Component {
                 return res.json()
             })
             .then(data => {
-
                 const fields = [...this.state.opciones]
-                let items =
-                    fields[fields.length - 1].sections = data.toolbar;
-                fields[fields.length - 1].sections.unshift({
+                let items = fields[fields.length - 2].sections = data.toolbar;
+                fields[fields.length - 2].sections.unshift({
                     title: "Seleccione una opción", _id: uuidv4(), items: [{ title: "seleccione un apartado" }]
                 })
                 this.setState({ opciones: fields })
@@ -120,11 +129,12 @@ class AddBlog extends Component {
         isValid = this.state.blog.segmentos.length >= 1 && isValid;
         isValid = this.state.opciones[0].value.length >= 6 && isValid;
         isValid = this.state.opciones[1].value !== "" && isValid
-
+      
         this.handleBlog(isValid)
     }
     handleBlog = (isValid) => {
         const modal = { ...this.state.modal }
+        console.log(this.state.blog)
         modal.status = true;
         if (isValid) {
             modal.message = "¡Blog Creado correctamente!";
@@ -140,7 +150,7 @@ class AddBlog extends Component {
     //fetching method into localhost:8080
 
     fetchBlogToAPI = () => {
-        console.log("This method will fetch my blog")
+       console.log(this.state.blog)
     }
     // INPUT HANDLERS 
 
@@ -159,7 +169,7 @@ class AddBlog extends Component {
         const newSegments = [...this.state.segmentos]
         const segmentFields = newSegments[index].fields;
 
-        const newSegment = { title: segmentFields[0].value, content: segmentFields[1].value }
+        const newSegment = {id: uuidv4(),  title: segmentFields[0].value, content: segmentFields[1].value }
 
         const newBlog = { ...this.state.blog }
         newBlog.segmentos.push(newSegment);
@@ -176,8 +186,20 @@ class AddBlog extends Component {
         } else {
             newOpciones[i].value = event.target.value;
         }
-        const sectionItems = this.assingItemsToSection(newOpciones)
-        this.setState({ opciones: newOpciones, sectionItems: sectionItems })
+        let sectionItems;
+
+        if (i === 1) {
+            sectionItems = this.assingItemsToSection(newOpciones)
+            newOpciones[2].sections = sectionItems;
+        }
+
+        const updatedBlog = {...this.state.blog}
+
+        updatedBlog.titulo = newOpciones[0].value; 
+        updatedBlog.seccion = newOpciones[1].value; 
+        updatedBlog.apartado = newOpciones[2].value;
+        updatedBlog.sectionId = newOpciones[1].sections[i]._id;
+        this.setState({ opciones: newOpciones, sectionItems: sectionItems  ,blog: updatedBlog})
     }
 
     assingItemsToSection = (options) => {
@@ -186,6 +208,7 @@ class AddBlog extends Component {
             if (opcion.sections) {
                 opcion.sections.map(section => {
                     if (opcion.value === section.title) {
+                        section.items.push({_id : uuidv4()})
                         sectionItems = section.items;
                     }
                 })
@@ -206,7 +229,7 @@ class AddBlog extends Component {
                 <Modal height={modal.height} status={modal.status} message={modal.message} type={modal.type} logo={null} click={this.validateBlog} close={this.modalActivate} />
                 <Phrase phrase={{ message: "Añadir un Blog", color: "#212b85" }} />
 
-                <form className="add_blog" onSubmit={null}>
+                <form className="add_blog">
                     {opciones.map((opcion, i) => {
                         return (
                             <BlogForms
@@ -217,16 +240,8 @@ class AddBlog extends Component {
                             />
                         )
                     })}
-                    <div className="add_blog__apartado">
-                        <select>
-                            {items.map(item => {
-                                return (
-                                    <option value={item.value}>{item.title}</option>
-                                )
-                            })}
-                        </select>
-                    </div>
                     <Spacer height="50px" />
+                    <label className="blog_title">{this.state.blog.titulo}</label>
                     <BlogPreview blog={blog} />
                     {this.state.segmentos.map((segmento, i) => {
                         return (
