@@ -148,6 +148,12 @@ class AddToolbar extends Component {
 
     }
 
+
+    inputSectionHandler = (event) => {
+        this.setState({newSection : event.target.value})
+    }
+
+
     blogInputHandler = (event, i) => {
         const newFields = [...this.state.fields];
 
@@ -163,9 +169,6 @@ class AddToolbar extends Component {
             field.id = i;
 
         })
-
-        console.log(fields)
-
         let message = { ...this.state.title }
         return (
             <div className="add_blog__container">

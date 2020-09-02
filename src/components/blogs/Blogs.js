@@ -4,39 +4,57 @@ import './blogs_card.css';
 
 
 class Blogs extends Component {
-    state = {
 
-        active: this.props.match.params,
-
-        titulo: {
-
-        },
-        contenido: {
-
-        }
-    };
-
-
-
-    shouldComponentUpdate(nextState, nextProps) {
-
-        if (nextState.match.params.id !== this.state.active.id || nextState.match.params.blog !== this.state.active.blog) {
-            this.setState({active : nextState.match.params})
-            return true;
-        }
-
-        return false
+    constructor(props) {
+        super(props)
     }
 
- 
-    render() {
-        console.log(this.state.active)
+    state = {
+        blog: {
+            params: {},
+            title: "",
+            segments: [],
+        },
+        params: {},
+    }
 
+    componentDidMount() {
+        fetch('http://localhost:8080/blogs/' + this.props.match.params.id + '/' + this.props.match.params.blog)
+            .then(promise => promise.json())
+            .then(blog => {
+                console.log("BLOG:>", blog)
+                this.setState({ blog: blog })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    componentDidUpdate(nextState) {
+        if (this.props.match.params !== nextState.match.params) {
+            this.fetchComponent();
+        }
+    }
+    fetchComponent = () => {
+        fetch('http://localhost:8080/blogs/' + this.props.match.params.id + '/' + this.props.match.params.blog)
+            .then(promise => promise.json())
+            .then(blog => {
+                console.log(blog)
+                this.setState({ blog: blog })
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    render() {
         return (
             <div className="blogs_container">
+                <h1>{this.state.params.blog}</h1>
+                <p>{this.state.blog.title}</p>
             </div>
         )
     }
+
 }
 
-export default Blogs; 
+export default Blogs;

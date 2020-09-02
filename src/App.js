@@ -37,7 +37,7 @@ class App extends Component {
                   <Switch>
                     <Route path="/admin/add-blog?edit=true" exact component={AddBlog} />
                     <Route path="/admin/add-blog" exact component={AddBlog} />
-                    <Route path="/blog/:id/:blog" exact component={Blogs} />
+                    <Route path="/blogs/:id/:blog" exact component={Blogs} />
                     <Route path="/admin/add-segment" exact component={AddToolbar} />
                     <Route path="*" exact component={My404Component} />
                   </Switch>

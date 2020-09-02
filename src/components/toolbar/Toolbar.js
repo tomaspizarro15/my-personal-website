@@ -37,7 +37,6 @@ class Toolbar extends PureComponent {
             }
         }) 
         this.setState({sections : updatedSection})
-        console.log(this.state.sections)
     }
 
     render() {

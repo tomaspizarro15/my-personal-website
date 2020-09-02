@@ -14,7 +14,7 @@ const ToolbarItems = (props) => {
             {props.items.map((item, i) => {
                 let ref = item.title.toLowerCase()
                 return (
-                    <li className={activeStyle} key={props._id + item.title}><Link to={'/blog/' + props._id + '/' + ref}>{item.title}</Link></li>
+                    <li className={activeStyle} key={props._id + item.title}><Link to={'/blogs/' + props._id + '/' + ref}>{item.title}</Link></li>
                 )
             })}
         </React.Fragment>

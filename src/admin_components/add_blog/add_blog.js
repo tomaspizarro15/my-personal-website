@@ -44,10 +44,11 @@ class AddBlog extends Component {
             sectionId: "",
             titulo: "",
             seccion: "",
-            apartado:"",
+            apartado: "",
             segmentos: []
         },
         segmentos: [],
+        sectionId: "",
 
         sectionItems: [{ title: "seleccione un apartado" }],
 
@@ -71,6 +72,7 @@ class AddBlog extends Component {
                 fields[fields.length - 2].sections.unshift({
                     title: "Seleccione una opción", _id: uuidv4(), items: [{ title: "seleccione un apartado" }]
                 })
+                console.log(fields)
                 this.setState({ opciones: fields })
             })
             .catch(err => {
@@ -129,7 +131,7 @@ class AddBlog extends Component {
         isValid = this.state.blog.segmentos.length >= 1 && isValid;
         isValid = this.state.opciones[0].value.length >= 6 && isValid;
         isValid = this.state.opciones[1].value !== "" && isValid
-      
+
         this.handleBlog(isValid)
     }
     handleBlog = (isValid) => {
@@ -150,7 +152,29 @@ class AddBlog extends Component {
     //fetching method into localhost:8080
 
     fetchBlogToAPI = () => {
-       console.log(this.state.blog)
+        const blog = { ...this.state.blog }
+        console.log("TO SEND BLOG:" , blog)
+        fetch('http://localhost:8080/admin/add-blog', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                sectionId: blog.sectionId,
+                section: blog.seccion,
+                fragment: blog.apartado,
+                title: blog.titulo,
+                segments: blog.segmentos,
+            })
+        })
+        .then(blog => {
+            if(blog === null) {
+                console.log("Blog not found")
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
     // INPUT HANDLERS 
 
@@ -169,7 +193,7 @@ class AddBlog extends Component {
         const newSegments = [...this.state.segmentos]
         const segmentFields = newSegments[index].fields;
 
-        const newSegment = {id: uuidv4(),  title: segmentFields[0].value, content: segmentFields[1].value }
+        const newSegment = { id: uuidv4(), title: segmentFields[0].value, content: segmentFields[1].value }
 
         const newBlog = { ...this.state.blog }
         newBlog.segmentos.push(newSegment);
@@ -181,25 +205,25 @@ class AddBlog extends Component {
 
     sectionInputHandler = (event, i) => {
         let newOpciones = [...this.state.opciones];
-        if (event.target.value === "Seleccione una opción") {
-            newOpciones[i].value = "";
-        } else {
-            newOpciones[i].value = event.target.value;
-        }
-        let sectionItems;
+
+        newOpciones[i].value = event.target.value;
+
+        const updatedBlog = { ...this.state.blog }
 
         if (i === 1) {
-            sectionItems = this.assingItemsToSection(newOpciones)
-            newOpciones[2].sections = sectionItems;
+            newOpciones[i].sections.map(section => {
+                if (section.title === event.target.value) {
+                    updatedBlog.sectionId = section._id;
+                    newOpciones[2].sections = section.items;
+                    newOpciones[2].value = section.items[0].title;
+                }
+            })
         }
-
-        const updatedBlog = {...this.state.blog}
-
-        updatedBlog.titulo = newOpciones[0].value; 
-        updatedBlog.seccion = newOpciones[1].value; 
+        updatedBlog.titulo = newOpciones[0].value;
+        updatedBlog.seccion = newOpciones[1].value;
         updatedBlog.apartado = newOpciones[2].value;
-        updatedBlog.sectionId = newOpciones[1].sections[i]._id;
-        this.setState({ opciones: newOpciones, sectionItems: sectionItems  ,blog: updatedBlog})
+
+        this.setState({ opciones: newOpciones, blog: updatedBlog })
     }
 
     assingItemsToSection = (options) => {
@@ -208,7 +232,7 @@ class AddBlog extends Component {
             if (opcion.sections) {
                 opcion.sections.map(section => {
                     if (opcion.value === section.title) {
-                        section.items.push({_id : uuidv4()})
+                        section.items.push({ _id: uuidv4() })
                         sectionItems = section.items;
                     }
                 })
