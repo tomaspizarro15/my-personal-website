@@ -86,10 +86,6 @@ class Main extends Component {
         console.log(data)
       })
   }
-
-
-
-
   render() {
     let phrases = { ...this.state.phrases }
     let paragraphs = { ...this.state.paragraphs }

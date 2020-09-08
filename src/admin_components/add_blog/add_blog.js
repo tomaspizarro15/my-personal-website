@@ -127,33 +127,20 @@ class AddBlog extends Component {
     // UX VALIDATION (blog methods)
 
     validateBlog = () => {
-        let isValid = true;
-        isValid = this.state.blog.segmentos.length >= 1 && isValid;
-        isValid = this.state.opciones[0].value.length >= 6 && isValid;
-        isValid = this.state.opciones[1].value !== "" && isValid
-
-        this.handleBlog(isValid)
+        this.handleBlog()
     }
     handleBlog = (isValid) => {
-        const modal = { ...this.state.modal }
-        console.log(this.state.blog)
-        modal.status = true;
-        if (isValid) {
-            modal.message = "¡Blog Creado correctamente!";
-            modal.type = 'good'
-            this.fetchBlogToAPI();
-        } else {
-            modal.message = "ERROR: Datos invalidos!";
-            modal.type = 'error'
-        }
-        this.setState({ modal: modal })
+
+
+        this.fetchBlogToAPI();
+
     }
 
     //fetching method into localhost:8080
 
     fetchBlogToAPI = () => {
-        const blog = { ...this.state.blog }
-        console.log("TO SEND BLOG:" , blog)
+        let blog = { ...this.state.blog }
+        console.log("TO SEND BLOG:", blog)
         fetch('http://localhost:8080/admin/add-blog', {
             method: 'POST',
             headers: {
@@ -167,14 +154,31 @@ class AddBlog extends Component {
                 segments: blog.segmentos,
             })
         })
-        .then(blog => {
-            if(blog === null) {
-                console.log("Blog not found")
-            }
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .then(response => {
+                const modal = { ...this.state.modal }
+                modal.status = true;
+                console.log(response)
+                switch (response.status) {
+                    case 201:
+                        modal.type = "good";
+                        modal.message = "blog creado correctamente!";
+                        blog = {};
+                        break;
+                    case 422:
+                        modal.type = "error";
+                        modal.message = "Error : Blog creado anteriormente!";
+                        break;
+                    case 409:
+                        modal.type = "error";
+                        modal.message = "Error : datos invalidos o no especificados!";
+                    default:
+                        break;
+                }
+                this.setState({ modal: modal })
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
     // INPUT HANDLERS 
 
@@ -250,7 +254,7 @@ class AddBlog extends Component {
         const blog = { ...this.state.blog }
         return (
             <div className="add_blog__container">
-                <Modal height={modal.height} status={modal.status} message={modal.message} type={modal.type} logo={null} click={this.validateBlog} close={this.modalActivate} />
+                <Modal height={modal.height} status={modal.status} message={modal.message} type={modal.type} logo={null} click={() => this.validateBlog(modal.status)} close={this.modalActivate} />
                 <Phrase phrase={{ message: "Añadir un Blog", color: "#212b85" }} />
 
                 <form className="add_blog">

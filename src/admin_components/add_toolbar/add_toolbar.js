@@ -70,42 +70,35 @@ class AddToolbar extends Component {
 
 
 
-    submitBlog = (event) => {
+    submitApartado = (event) => {
         event.preventDefault();
         let values = [];
 
         const fields = [...this.state.fields];
-
         fields.map((field, i) => {
             values.unshift(
                 field.value
             )
         })
-
-        console.log(values)
-
         fetch('http://localhost:8080/admin/add-blog', {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                blog: {
-                    title: values[1],
+                    title: values[1].toLowerCase(),
                     section: values[0],
-                }
             })
-
         })
             .then(promise => {
                 console.log(promise)
                 const statusBlog = { code: promise.status, status: promise.statusText }
                 this.setState({ statusBlog: statusBlog, blogStatus: true })
 
-                if (promise.status <= 201) {
+                if (promise.status === 201) {
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1000);
+                    }, 1250);
                 }
 
                 return promise.json()
@@ -113,20 +106,19 @@ class AddToolbar extends Component {
             .catch(err => {
                 console.log(err)
             })
-
     }
-
     submitSection = (event) => {
 
         let statusCode;
 
         event.preventDefault();
         console.log(this.state.newSection)
+
         fetch('http://localhost:8080/admin/add-segment', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                id : uuidv4(),
+                id: uuidv4(),
                 title: this.state.newSection,
             })
         }).then(promise => {
@@ -135,10 +127,17 @@ class AddToolbar extends Component {
             return promise.json();
         })
             .then(response => {
+                console.log("Response new section" , response)
                 const newFields = [...this.state.fields];
-
                 newFields[0].value = "";
                 this.setState({ responseMessage: response, status: true, newSection: "", fields: newFields })
+
+                if(response.code === 201) {
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1250);
+                } 
+
             })
             .catch(err => {
                 console.log(err)
@@ -150,7 +149,7 @@ class AddToolbar extends Component {
 
 
     inputSectionHandler = (event) => {
-        this.setState({newSection : event.target.value})
+        this.setState({ newSection: event.target.value })
     }
 
 
@@ -163,17 +162,18 @@ class AddToolbar extends Component {
 
     }
     render() {
+        console.log("Render")
+        console.log(this.state.statusBlog)
         let fields = [...this.state.fields];
         fields.map((field, i) => {
 
             field.id = i;
 
         })
-        let message = { ...this.state.title }
         return (
             <div className="add_blog__container">
                 <Phrase phrase={this.state.phrases[1]} />
-                <form className="add_blog" onSubmit={(event) => this.submitBlog(event)}>
+                <form className="add_blog" onSubmit={(event) => this.submitApartado(event)}>
                     {fields.map((field) => {
                         return (
                             <BlogForms key={fields.id} value={field.value} field={field} change={(event) => this.blogInputHandler(event, field.id)} select={field.title} />

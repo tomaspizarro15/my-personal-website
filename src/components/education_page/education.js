@@ -11,7 +11,7 @@ class Education extends Component {
 
     state = {
         phrases: {
-            head: { message: "Formación", color: "#212B85" },
+            head: { message: "Certificación", color: "#212B85" },
             cursosRealizados: { message: "Cursos realizados", color: "#212B85" },
             cursosNoRealizados: { message: "Cursos por realizar", color: "#212B85" }
         },
@@ -20,7 +20,7 @@ class Education extends Component {
                 logo: academindLogo,
                 name: 'Academind',
                 website: '',
-                text: 'Academind es un instituto de programacion online fundado por Maximilian Schwarzmülller & Manuel Lorenz y cuenta con mas de 1.000.000 de estudiantes alrededor del mundo.  Se enfoca en el desarrollo web y cuenta con decenas de certificaciones sobre distintas tecnologias de la industria como mongo,angular,redux,react etc...',
+                text: 'Academind es un instituto de programacion online fundado por Maximilian Schwarzmülller & Manuel Lorenz y cuenta con mas de 1.000.000 de estudiantes alrededor del mundo.  Se enfoca en el desarrollo web y cuenta con decenas de certificaciones sobre distintas tecnologias de la industria como Mongodb, Node.js , React.js , Angular , Native y mas!',
                 color: 'orange',
                 link: 'https://academind.com/',
             }
