@@ -5,6 +5,7 @@ import BlogForms from './blog_forms';
 import AddSegment from '../add_segment/add_segment';
 import ErrorHandler from '../../error/error_handler';
 import { v4 as uuidv4 } from 'uuid';
+import { connect } from 'react-redux';
 class AddToolbar extends Component {
     state = {
         phrases: [
@@ -67,9 +68,6 @@ class AddToolbar extends Component {
                 console.log("Failed", err)
             })
     }
-
-
-
     submitApartado = (event) => {
         event.preventDefault();
         let values = [];
@@ -83,11 +81,12 @@ class AddToolbar extends Component {
         fetch('http://localhost:8080/admin/add-blog', {
             method: 'PUT',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization" : this.props.token, 
             },
             body: JSON.stringify({
-                    title: values[1].toLowerCase(),
-                    section: values[0],
+                title: values[1].toLowerCase(),
+                section: values[0],
             })
         })
             .then(promise => {
@@ -116,7 +115,10 @@ class AddToolbar extends Component {
 
         fetch('http://localhost:8080/admin/add-segment', {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": this.props.token,
+            },
             body: JSON.stringify({
                 id: uuidv4(),
                 title: this.state.newSection,
@@ -127,17 +129,16 @@ class AddToolbar extends Component {
             return promise.json();
         })
             .then(response => {
-                console.log("Response new section" , response)
+                console.log("Response new section", response)
                 const newFields = [...this.state.fields];
                 newFields[0].value = "";
                 this.setState({ responseMessage: response, status: true, newSection: "", fields: newFields })
 
-                if(response.code === 201) {
+                if (response.code === 201) {
                     setTimeout(() => {
                         window.location.reload();
                     }, 1250);
-                } 
-
+                }
             })
             .catch(err => {
                 console.log(err)
@@ -191,5 +192,9 @@ class AddToolbar extends Component {
         )
     }
 }
-
-export default AddToolbar; 
+const mapStateToProps = (state) => {
+    return {
+        token: state.token,
+    }
+}
+export default connect(mapStateToProps)(AddToolbar); 

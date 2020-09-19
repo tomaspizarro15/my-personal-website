@@ -7,7 +7,11 @@ import { v4 as uuidv4 } from 'uuid';
 import Modal from '../../util/modal/modal';
 import Spacer from '../../util/spacer/spacer';
 import BlogPreview from './blog_preview/blog_preview';
+import Cookies from 'universal-cookie';
+import { connect } from 'react-redux';
 
+const cookie = new Cookies(); 
+const token = cookie.get('token')
 
 class AddBlog extends Component {
 
@@ -56,7 +60,6 @@ class AddBlog extends Component {
     }
 
     componentDidMount() {
-
         fetch('http://localhost:8080/toolbar', {
             method: 'GET',
             headers: {
@@ -78,6 +81,21 @@ class AddBlog extends Component {
             .catch(err => {
                 console.log("Failed", err)
             })
+        const cookie = new Cookies(); 
+        const tkn = cookie.get('token');
+        console.log(tkn)
+        fetch('http://localhost:8080/admin/add-blog', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": tkn,
+            }
+        }).then((promise) => promise.json())
+            .then((response) => {
+                console.log(response)
+            }).catch(err => {
+                console.log(err)
+            });
 
     }
 
@@ -140,11 +158,13 @@ class AddBlog extends Component {
 
     fetchBlogToAPI = () => {
         let blog = { ...this.state.blog }
+        console.log("[fetchBlogToAPI] token")
         console.log("TO SEND BLOG:", blog)
         fetch('http://localhost:8080/admin/add-blog', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
+                Authorization: token,
             },
             body: JSON.stringify({
                 sectionId: blog.sectionId,
@@ -229,7 +249,6 @@ class AddBlog extends Component {
 
         this.setState({ opciones: newOpciones, blog: updatedBlog })
     }
-
     assingItemsToSection = (options) => {
         let sectionItems;
         options.map(opcion => {
@@ -292,5 +311,12 @@ class AddBlog extends Component {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        token: state.token,
+    }
+}
+const dispatchPropsToState = () => {
 
-export default AddBlog; 
+}
+export default connect(mapStateToProps, dispatchPropsToState)(AddBlog); 

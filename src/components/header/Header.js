@@ -1,19 +1,23 @@
-import React from 'react';
-import { PureComponent } from "react";
+import React, { Component } from 'react';
 import HeaderTools from './header_tools';
 import './header.css'
 import Home_Logo from './home_icon.png'
 import HomeButton from './home/home_button';
 import { Link } from 'react-router-dom';
-class Header extends PureComponent {
+import Cookies from 'universal-cookie';
+
+
+class Header extends Component {
 
   state = {
     navigationTools: [
       { id: "tool1", title: 'Educacion', path: '/educacion' },
       { id: "tool2", title: 'Sobre mi', path: '/biografia' },
-      { id: "tool3", title: 'Contactarse', path: '/contacto' },
-      { id: "tool4", title: 'Conocimientos', path: '/contacto' },
     ],
+    cookie: ""
+  }
+  componentDidMount() {           
+    const cookie = new Cookies;
   }
   render() {
     return (
@@ -28,7 +32,7 @@ class Header extends PureComponent {
 
           </div>
           <div className="header_right">
-            <ul className="header_tools"> 
+            <ul className="header_tools">
               {this.state.navigationTools.map(tool => {
                 return (
                   <HeaderTools key={tool.id} title={tool.title} path={tool.path} />
@@ -40,7 +44,7 @@ class Header extends PureComponent {
         </nav>
       </div>
     )
-  }
+  }                                                                                           
 }
 
 export default Header;

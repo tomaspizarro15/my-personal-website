@@ -12,32 +12,52 @@ import Blogs from './components/blogs/Blogs';
 import AddToolbar from './admin_components/add_toolbar/add_toolbar';
 import AddBlog from './admin_components/add_blog/add_blog';
 import My404Component from './error/errorComponents/404';
+import login from './auth_components/login';
+
+import { fetchToken, fetchUser } from './redux/actions';
+import * as actionType from './redux/actions';
+import { connect } from 'react-redux'
+import Cookies from 'universal-cookie';
 
 class App extends Component {
 
   state = {
-
-    valid: true,
-
+    token: true,
+    user: {},
   }
-  render() {
 
+  componentDidMount() {
+    console.log("[[ComponentDidMount()]]")
+    const cookie = new Cookies;
+    const token = cookie.get('token')
+    this.props.fetchToken(token);
+    this.setState({user : this.props.user})
+  }
+
+  render() {
+    console.log("RENDER" , this.props.user)
+    let userMessage; 
+    if(this.props.user) {
+      userMessage = <p>Hello admin</p>
+    }
     return (
-      <div className="App">
+      <div className="App">       
         <BrowserRouter>
           <Header />
+          {userMessage}
           <div className="App_body">
             <div className="App_main__content">
               <Switch>
                 <Route path="/" exact component={Main} />
+                <Route path="/login" exact component={login} />
                 <Route path="/contactos" exact component={Main} />
                 <Route path="/educacion" exact component={Education} />
-                {this.state.valid
+                <Route path="/blogs/:id/:blog" exact component={Blogs} />
+                {this.state.token
                   ?
                   <Switch>
                     <Route path="/admin/add-blog?edit=true" exact component={AddBlog} />
                     <Route path="/admin/add-blog" exact component={AddBlog} />
-                    <Route path="/blogs/:id/:blog" exact component={Blogs} />
                     <Route path="/admin/add-segment" exact component={AddToolbar} />
                     <Route path="*" exact component={My404Component} />
                   </Switch>
@@ -57,4 +77,16 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    token: state.token,
+    user : state.user,
+  };
+}
+const dispatchPropsToState = (dispatch) => {
+  return {
+    fetchToken: (token) => dispatch(fetchToken(token)),
+    fetchUser: (user) => dispatch(fetchUser(user)),
+  }
+}
+export default connect(mapStateToProps, dispatchPropsToState)(App);     
