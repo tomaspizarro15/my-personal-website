@@ -25,11 +25,11 @@
 }
 .diagram_item__icon {
     width: 100px;
-    opacity: 1;
+    opacity: 0.6;
     transition: all 150ms ease;
 }
 .diagram_item__icon.on {
-    width: 75px;
+    opacity: 1;
     transition: all 150ms ease;
 }
 .diagram_item__icon:hover {

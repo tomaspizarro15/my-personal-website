@@ -18,25 +18,25 @@ class Diagram extends Component {
             title: 'Ecosistema MERN (JavaScript)',
 
             items: [
-                { id: '0', status: false, href: 'https://www.mongodb.com/', color: 'green', title: 'Mongo', description: 'Mongo es el tipo de base de datos de este Ecosistema , esta basada en la estructura de datos JSON , es una base de datos tipo noSQL',  color: '', icon: mongoDbIcon },
-                { id: '1', status: false, href: 'https://expressjs.com/es/', color: 'yellow', title: 'Express', description: 'Express es el encargado de levantar la API en un servidor a traves de un HOST, lo mas interesante de express es el express.Router() y sus famosos Middlewares. que permite definir endpoints disponibles para el cliente utilizando Middlewares.  Express es un modulo construido en Node, pero es tan grande y con tanta funcionalidad que se le "separa" de node',  color: '', icon: expressIcon },
-                { id: '2', status: false, href: 'https://es.reactjs.org/', color: 'skyblue', title: 'React', description: 'React es una libreria de JavaScript desarrollada por facebook , sus dos grandes rasgos son el State managment y el renderizado del dominio , es una libreria muy poderosa, que consentra todo su potencial en escribir codigo "HTML" dentro de un entorno JavaScript.React renderiza el dominio a traves del reactDOM ahi se deposita la logica del usuario con JavaScript brindando al usuario de una buena experiencia e interface',  color: '', icon: reactIcon },
-                { id: '3', status: false, href: 'https://nodejs.org/es/', color: 'green', title: 'Node', description: 'Node es un entorno de ejecucíon escrito en C++, en donde se orquesta la API. y se manejan todos los modulos requeridos para la aplicación, ejemplo de un Modulo es Express',  color: '', icon: nodeIcon },
+                { id: '2', status: false, href: 'https://es.reactjs.org/', color: 'skyblue', title: 'React', description: 'React es una libreria de JavaScript desarrollada por facebook , sus dos grandes rasgos son el State managment y el renderizado del dominio , es una libreria muy poderosa, que consentra todo su potencial en escribir codigo "HTML" dentro de un entorno JavaScript.React renderiza el dominio a traves del reactDOM ahi se deposita la logica del usuario con JavaScript brindando al usuario de una buena experiencia e interface', color: '', icon: reactIcon },
+                { id: '3', status: false, href: 'https://nodejs.org/es/', color: 'green', title: 'Node', description: 'Node es un entorno de ejecucíon escrito en C++, en donde se orquesta la API. y se manejan todos los modulos requeridos para la aplicación, ejemplo de un Modulo es Express', color: '', icon: nodeIcon },
+                { id: '0', status: false, href: 'https://www.mongodb.com/', color: 'green', title: 'Mongo', description: 'Mongo es el tipo de base de datos de este Ecosistema , esta basada en la estructura de datos JSON , es una base de datos tipo noSQL', color: '', icon: mongoDbIcon },
+                { id: '1', status: false, href: 'https://expressjs.com/es/', color: 'yellow', title: 'Express', description: 'Express es el encargado de levantar la API en un servidor a traves de un HOST, lo mas interesante de express es el express.Router() y sus famosos Middlewares. que permite definir endpoints disponibles para el cliente utilizando Middlewares.  Express es un modulo construido en Node, pero es tan grande y con tanta funcionalidad que se le "separa" de node', color: '', icon: expressIcon },
             ],
             paragraphs: {
-               upper : [
-                { id : "p01" , text: 'Se utilizo todo un Ecosistema JavaScript tanto para el backend como para el frontend , una combinacion de cuatro de las tecnologias mas utilizadas en la industria del desarrollo web' },
-                {  id : "p02",text: 'Estos subsistemas tienen su rol especifico y definido para componer la aplicacion, base de datos, servidor, frontend y ejecución.'}
-               ],
-               lower : [
-                   { id : "p01" ,text: 'Este modelo de construccion de aplicaciones asi mismo como MEAN , que es reemplaza React.js con el framework Angular , tiene un gran potencial al permitir al desarrollador programar en un solo lenguaje JS, ya que las bases de datos se manejan en formato "JSON", JavaScript Object Notation'},
-                   { id : "p02" ,text: 'Ya desde 2009 que esta es una arquitectura viable, con el desarrollo de el entorno de ejecucion Node , creado por Ryan Dahl'},
-                   { id : "p03" ,text: 'los modulos de node permitieron la facil adherencia de modulos de conexion con sesiones, bases de datos tales como Mongo o mySQL'},
-                   { id : "p04" ,text: 'Mongodb permite un tipo de escalado horizontal y una flexibilidad de los datos en las colecciones, ademas de confiabilidad y seguridad de los datos sensibles del usuario'},
-                   { id : "p05" ,text: 'Express permite explotar al maximo modulos de Node.js , como por ejemplo Routing , Sessions ,Validaciones etc'},
-                   { id : "p06" ,text: 'React permite brindar al usuario una UI/UX excelente ademas de tener herramientas de renderizado y ruteo'},
-                   { id : "p07" ,text: 'Node es el entorno de ejecucion que permite levantar una aplicación JavaScript en server-side y no solo en el client-side'}         
-               ]
+                upper: [
+                    { id: "p01", text: 'Se utilizo todo un Ecosistema JavaScript tanto para el backend como para el frontend , una combinacion de cuatro de las tecnologias mas utilizadas en la industria del desarrollo web' },
+                    { id: "p02", text: 'Estos subsistemas tienen su rol especifico y definido para componer la aplicacion, base de datos, servidor, frontend y ejecución.' }
+                ],
+                lower: [
+                    { id: "p01", text: 'Este modelo de construccion de aplicaciones asi mismo como MEAN , que es reemplaza React.js con el framework Angular , tiene un gran potencial al permitir al desarrollador programar en un solo lenguaje JS, ya que las bases de datos se manejan en formato "JSON", JavaScript Object Notation' },
+                    { id: "p02", text: 'Ya desde 2009 que esta es una arquitectura viable, con el desarrollo de el entorno de ejecucion Node , creado por Ryan Dahl' },
+                    { id: "p03", text: 'los modulos de node permitieron la facil adherencia de modulos de conexion con sesiones, bases de datos tales como Mongo o mySQL' },
+                    { id: "p04", text: 'Mongodb permite un tipo de escalado horizontal y una flexibilidad de los datos en las colecciones, ademas de confiabilidad y seguridad de los datos sensibles del usuario' },
+                    { id: "p05", text: 'Express permite explotar al maximo modulos de Node.js , como por ejemplo Routing , Sessions ,Validaciones etc' },
+                    { id: "p06", text: 'React permite brindar al usuario una UI/UX excelente ademas de tener herramientas de renderizado y ruteo' },
+                    { id: "p07", text: 'Node es el entorno de ejecucion que permite levantar una aplicación JavaScript en server-side y no solo en el client-side' }
+                ]
             },
         },
         activeItem: []
@@ -52,8 +52,8 @@ class Diagram extends Component {
                 newItem.status = false;
             }
             else {
-                if(!newItem.status) {
-                    return this.setState({activeItem : []})
+                if (!newItem.status) {
+                    return this.setState({ activeItem: [] })
                 }
                 setTimeout(() => {
                     this.setState({ activeItem: newItems[i] })
@@ -76,13 +76,13 @@ class Diagram extends Component {
                         return (
                             <div className="item_container" key={item.id}>
                                 <DiagramLogo click={() => { this.activateDiagram(item.id) }} item={item} />
-                                <DiagramItems  key ={item.id} status={item.status} color={item.color} />
+                                <DiagramItems key={item.id} status={item.status} color={item.color} />
                             </div>
                         )
                     })}
                 </div>
                 <DiagramInfo info={this.state.activeItem} />
-                <TextComponent paragraphs = {diagram.paragraphs.lower}/>
+                <TextComponent paragraphs={diagram.paragraphs.lower} />
             </div>
         );
     }
