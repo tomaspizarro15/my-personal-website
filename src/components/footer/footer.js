@@ -9,8 +9,7 @@ const Footer = (props) => {
     return (
         <footer className="footer_container">
             <div className="footer">
-                <p>Copyright © 2020 - Tomas Pizarro</p>
-                <p> se reservan los derechos de autor a la marca registrada de Tomas Pizarro, por derechos de copyright</p>
+                <p>Pagina web desarrollada por Tomás Pizarro</p>
                 <div>
                     <p>
                         Iconos con derecho de autor de © 2020 Icons8 LLC.
