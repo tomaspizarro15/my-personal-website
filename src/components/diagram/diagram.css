@@ -108,6 +108,7 @@
      .diagram_info{
          width: 100%;
          height: 35rem;
+         
      }
      .diagram_item{
          width: 5rem;
@@ -122,6 +123,6 @@
          width: 50px;
      }
      .diagram_item__icon.on {
-         width: 15vw;
+
      }
  }
