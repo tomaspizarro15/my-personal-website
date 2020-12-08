@@ -49,7 +49,7 @@ class App extends Component {
 
 
 
-    fetch('https://tomas-pizarro.herokua  pp.com/', {
+    fetch('https://tomas-pizarro.herokuapp.com/', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
