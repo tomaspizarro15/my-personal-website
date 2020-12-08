@@ -31,10 +31,15 @@
     .text_component__container  {
         width: 100%;
     }
+    .text_component {
+        width: 85%;
+    }
     .text_component__title {
         font-size: 24px;
     }
     .text_component__paragraph {
+        text-align: center;
         font-size: 20px;
+        margin: 15px 0 15px 0;
     }
 }
