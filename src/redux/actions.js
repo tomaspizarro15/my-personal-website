@@ -1,35 +1,14 @@
 export const FETCH_TOKEN = 'FETCH_TOKEN';
-export const FETCH_USER = 'FETCH_USER';
+export const FETCH_STATUS = 'FETCH_STATUS';
 
-export const storeToken = (token) => {
+export const fetchUser = (user, status) => {
     return {
-        type: FETCH_TOKEN,
+        type: FETCH_STATUS,
         payload: {
-            token: token,
-        }
-    }
-}
-export const fetchToken = (token) => {
-    return dispatch => {
-        fetch('http://localhost:8080/', {
-            method: 'GET',
-            headers: {
-                "Content-Type": 'application/json',
-                "Authorization": token,
-            }
-        })
-            .then((promise) => promise.json())
-            .then(response => {
-                dispatch(fetchUser(response.user))
-            })
-            .catch()
-    }
-}
-export const fetchUser = (user) => {
-    return {
-        type: FETCH_USER,
-        payload: {
-            value: user,
+            value: {
+                user: user,
+                status: status
+            },
         }
     }
 }

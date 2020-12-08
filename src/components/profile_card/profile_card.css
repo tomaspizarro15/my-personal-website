@@ -23,6 +23,7 @@
     background-color: white;
     box-shadow: inset 0 0 15px -5px;
     border-radius: 128px;
+    background-size: 100%;
 }
 .profile_card__info {
     width: 90%;

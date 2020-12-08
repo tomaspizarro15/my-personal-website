@@ -59,7 +59,7 @@ class login extends Component {
         let time = date.getTime();
         time += 3600 * 1000;
         date.setTime(time);
-        cookie.set('token', token, { maxAge: date})
+        cookie.set('token', token, { maxAge: date })
         return cookie.get('token');
     }
     render() {
@@ -71,7 +71,6 @@ class login extends Component {
             )
             loginStyle = "login_input invalid"
         }
-        console.log("[login.js]", this.state.loginStatus)
         return (
             <div className="login_container">
                 <form className="login" onSubmit={(event) => { this.submitFormHandler(event) }}>

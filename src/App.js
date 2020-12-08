@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useReducer } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
@@ -18,33 +18,59 @@ import { fetchToken, fetchUser } from './redux/actions';
 import * as actionType from './redux/actions';
 import { connect } from 'react-redux'
 import Cookies from 'universal-cookie';
+import Biography from './components/biography/biography';
+import AdminProfile from './admin_components/profile/admin_profile';
 
 class App extends Component {
-
   state = {
-    token: true,
+    token: false,
+    status: undefined,
     user: {},
+    image: "",
+  }
+
+  fileReader = (file) => {
+    const blob = new Blob(file.data)
+    const newBlob = blob.arrayBuffer(file.data)
+    const reader = new FileReader()
+    const promise = new Promise((resolve, reject) => {
+      reader.onload = (event) => resolve(event.target.result)
+      reader.onerror = (e) => reject(e)
+    })
+    const readedFil = reader.readAsDataURL(blob)
+    return promise
+
   }
 
   componentDidMount() {
-    console.log("[[ComponentDidMount()]]")
+    const formData = new FormData();
     const cookie = new Cookies;
-    const token = cookie.get('token')
-    this.props.fetchToken(token);
-    this.setState({user : this.props.user})
-  }
+    const token = cookie.get('token');
 
+
+
+    fetch('http://localhost:8080', {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": token,
+      }
+    })
+      .then(promise => promise.json())
+      .then(res => {
+        console.log(res)
+        if (res.status === 200) {
+          this.setState({ status: res.status ,user: res.user})
+          this.props.fetchUser(res.user, res.status) 
+        }
+      })
+  }
   render() {
-    console.log("RENDER" , this.props.user)
-    let userMessage; 
-    if(this.props.user) {
-      userMessage = <p>Hello admin</p>
-    }
+    console.log(this.state)
     return (
-      <div className="App">       
+      <div className="App">
         <BrowserRouter>
           <Header />
-          {userMessage}
           <div className="App_body">
             <div className="App_main__content">
               <Switch>
@@ -52,17 +78,18 @@ class App extends Component {
                 <Route path="/login" exact component={login} />
                 <Route path="/contactos" exact component={Main} />
                 <Route path="/educacion" exact component={Education} />
+                <Route path="/biografia" exact component={Biography} />
                 <Route path="/blogs/:id/:blog" exact component={Blogs} />
-                {this.state.token
+                {this.state.user.token
                   ?
                   <Switch>
                     <Route path="/admin/add-blog?edit=true" exact component={AddBlog} />
                     <Route path="/admin/add-blog" exact component={AddBlog} />
                     <Route path="/admin/add-segment" exact component={AddToolbar} />
-                    <Route path="*" exact component={My404Component} />
+                    <Route path="/admin/profile" exact component={AdminProfile} />
                   </Switch>
-                  : (<Redirect to="/" />)}
-                <Route path="*" exact component={My404Component} />
+                  : (<Route path="*" exact component={My404Component} />)}
+
               </Switch>
             </div>
             <div className="App_side__content">
@@ -79,14 +106,13 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    token: state.token,
-    user : state.user,
+    status: state.status,
+    user: state.user,
   };
 }
 const dispatchPropsToState = (dispatch) => {
   return {
-    fetchToken: (token) => dispatch(fetchToken(token)),
-    fetchUser: (user) => dispatch(fetchUser(user)),
+    fetchUser: (user, status) => dispatch(actionType.fetchUser(user, status)),
   }
 }
 export default connect(mapStateToProps, dispatchPropsToState)(App);     

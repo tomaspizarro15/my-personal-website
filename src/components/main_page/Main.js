@@ -36,12 +36,12 @@ class Main extends Component {
         items: [
           { id: 0, title: 'nodemon', code: 'npm install --save-dev nodemon', href: "https://www.npmjs.com/package/nodemon" },
           { id: 1, title: 'body parser', code: 'npm install --save body-parser', href: "https://www.npmjs.com/package/body-parser" },
-          { id: 2, title: 'mongodb', code: 'npm install --save mongodb', href: "" },
-          { id: 3, title: 'bcrypt', code: 'npm install --save bcrypt', href: "" },
-          { id: 4, title: 'csurf', code: 'npm install --save csurf', href: "" },
+          { id: 2, title: 'mongodb', code: 'npm install --save mongodb', href: "https://www.mongodb.com/" },
+          { id: 3, title: 'bcrypt', code: 'npm install --save bcrypt', href: "https://www.npmjs.com/package/bcryptjs" },
+          { id: 4, title: 'csurf', code: 'npm install --save csurf', href: "https://www.npmjs.com/package/csurf" },
           { id: 5, title: 'mongoose', code: 'npm install --save mongoose', href: "https://mongoosejs.com/docs/guide.html" },
           { id: 6, title: 'create-react-app', code: 'npm install --save create-react-app', href: "https://create-react-app.dev/docs/getting-started/" },
-          { id: 7, title: 'axios', code: 'npm install --save axios', href: "" },
+          { id: 7, title: 'axios', code: 'npm install --save axios', href: "https://www.npmjs.com/package/axios" },
 
         ]
       },

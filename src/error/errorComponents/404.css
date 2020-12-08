@@ -28,3 +28,8 @@
     cursor: pointer;
     transition: all 250ms ease;
 }
+@media(max-width : 768px) {
+    .error_button {
+        width: 50%;
+    }
+}
