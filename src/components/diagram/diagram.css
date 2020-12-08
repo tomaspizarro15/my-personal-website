@@ -24,17 +24,15 @@
     list-style: none;
 }
 .diagram_item__icon {
-    width: 5vw;
+    width: 100px;
     opacity: 1;
     transition: all 150ms ease;
 }
 .diagram_item__icon.on {
-    width: 3.5vw;
+    width: 75px;
     transition: all 150ms ease;
 }
 .diagram_item__icon:hover {
-    width: 6rem;
-    opacity: 1;
     transition: all 150ms ease;
     cursor: pointer;
 }
@@ -121,7 +119,7 @@
         font-size: 5vmin;
      }
      .diagram_item__icon {
-         width: 20vw;
+         width: 50px;
      }
      .diagram_item__icon.on {
          width: 15vw;

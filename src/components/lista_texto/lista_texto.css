@@ -10,7 +10,7 @@
     margin-left: 1vw;
 }
 .element__p {
-    font-size: 1vw;
+    font-size: 22px;
 }
 @media (max-width : 768px){
     .element__p {

@@ -50,9 +50,11 @@ class Education extends Component {
             ]
         },
         idiomas: {
-            title: 'Idiomas',
+            title: {text : "Idiomas" , color :"#212B85"},
             items: [
-                { id: "p05", text: 'Hablo 3 idiomas , Español , Ingles y Portugues , además en 2021 aprenderé Frances' }
+                { id: "p01", texto: 'Español' },
+                { id: "p02", texto: 'Ingles avanzado'  },
+                { id: "p03", texto: 'Portugues basico' },
             ]
         },
         lists: {
@@ -110,7 +112,7 @@ class Education extends Component {
                 <Listate listado={lists.academindCourses.realizados} title={phrases.cursosRealizados.message} icon={icon} />
                 <Listate listado={lists.academindCourses.noRealizados} title={phrases.cursosNoRealizados.message} icon={icon} />
                 <TextComponent paragraphs={this.state.educacionPrevia.items} title={this.state.educacionPrevia.title} />
-                <TextComponent paragraphs={this.state.idiomas.items} title={this.state.idiomas.title} />
+                <ListaDeTexto  title = {this.state.idiomas.title} lista = {this.state.idiomas.items}/>
             </div>
         )
     }

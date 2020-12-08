@@ -18,13 +18,13 @@
 }
 .text_component__title {
     color: black;
-    font-size: 3vmin;
+    font-size: 22px;
     text-align: center;
     margin-bottom: 2.5rem;
 }
 .text_component__paragraph {
     color: #1b1b1b;
-    font-size:2.5vmin;
+    font-size:20px;
     margin: 0;
 }
 @media(max-width: 768px) {
