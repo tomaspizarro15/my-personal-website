@@ -49,14 +49,17 @@ class App extends Component {
 
 
 
-    fetch('http://localhost:8080', {
+    fetch('https://tomas-pizarro.herokua  pp.com/', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Authorization": token,
       }
     })
-      .then(promise => promise.json())
+      .then(promise => {
+        console.log(promise)
+        return promise.json()
+      })
       .then(res => {
         console.log(res)
         if (res.status === 200) {
