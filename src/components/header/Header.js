@@ -5,7 +5,6 @@ import Home_Logo from './home_icon.png'
 import settings_Logo from './settings_icon.png'
 import HomeButton from './home/home_button';
 import { Link } from 'react-router-dom';
-import Cookies from 'universal-cookie';
 import { connect } from 'react-redux';
 import LogoutIcon from './home/logout/logout_icon';
 

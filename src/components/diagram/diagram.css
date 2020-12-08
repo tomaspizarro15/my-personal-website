@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 6rem;
+    width: 6vw;
     height: 7.5rem;
     padding: 0;
     margin: 0;
@@ -24,12 +24,12 @@
     list-style: none;
 }
 .diagram_item__icon {
-    width: 5rem;
+    width: 5vw;
     opacity: 1;
     transition: all 150ms ease;
 }
 .diagram_item__icon.on {
-    width: 7.5rem;
+    width: 3.5vw;
     transition: all 150ms ease;
 }
 .diagram_item__icon:hover {
@@ -45,7 +45,7 @@
     margin:  0rem 0 0 0;
 }
 .item {
-    display: flex;
+    display: flex;                                                                      
     justify-content: center;
 }
 .item_line {
@@ -79,7 +79,6 @@
     height: 25rem;
     margin:  0;
     transition: all 1000ms ease-out;
-    
 }
 .diagram_info.off {
     height: 0rem;
@@ -120,5 +119,11 @@
      }
      .diagram_info__text {
         font-size: 5vmin;
+     }
+     .diagram_item__icon {
+         width: 20vw;
+     }
+     .diagram_item__icon.on {
+         width: 15vw;
      }
  }

@@ -20,6 +20,7 @@ import { connect } from 'react-redux'
 import Cookies from 'universal-cookie';
 import Biography from './components/biography/biography';
 import AdminProfile from './admin_components/profile/admin_profile';
+import { Helmet } from 'react-helmet';
 
 class App extends Component {
   state = {
@@ -72,8 +73,11 @@ class App extends Component {
     console.log(this.state)
     return (
       <div className="App">
+      <title>Tomas Pizarro</title>
         <BrowserRouter>
           <Header />
+          <Helmet><title>Tomas Pizarro</title></Helmet>
+
           <div className="App_body">
             <div className="App_main__content">
               <Switch>
@@ -92,12 +96,10 @@ class App extends Component {
                     <Route path="/admin/profile" exact component={AdminProfile} />
                   </Switch>
                   : (<Route path="*" exact component={My404Component} />)}
-
               </Switch>
             </div>
             <div className="App_side__content">
-              <ProfileCard />
-              <Toolbar />
+              <ProfileCard /> 
             </div>
           </div>
           <Footer />

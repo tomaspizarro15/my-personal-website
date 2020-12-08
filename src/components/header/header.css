@@ -76,6 +76,10 @@ border-radius: 0 0 0px 8px;
  .header_right {
    background-color: #212B85;
  }
+ .header_tools_anchor:hover {
+  color: black;
+  transition: all 250ms ease; 
+}
  .header_tools_anchor {
    color: white;
    font-weight: lighter;

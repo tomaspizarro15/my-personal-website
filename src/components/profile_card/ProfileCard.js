@@ -9,13 +9,9 @@ class ProfileCard extends Component {
 
     state = {
         logos: [
-            { id: "logo01", alt: 'git', src: gitLogo },
-            { id: "logo02", alt: 'linkedin', src: linkLogo },
-            { id: "logo03", alt: 'gmail', src: gmailLogo },
+            { ref : "https://github.com/tomaspizarro15" ,id: "logo01", alt: 'git', src: gitLogo },
+            { ref : "https://www.linkedin.com/in/tom%C3%A1s-pizarro-14b0021b2/" ,id: "logo02", alt: 'linkedin', src: linkLogo },
         ],
-        links: [
-
-        ]
     }
 
     render() {
@@ -31,16 +27,18 @@ class ProfileCard extends Component {
                 <div className="profile_card__media">
                     {this.state.logos.map((logo) => {
                         return (
-                            <div key={logo.id} className="profile_card__media_image">
-                                <img src={logo.src} alt={logo.alt}></img>
-                            </div>
+                            <a href = {logo.ref}>
+                                <div key={logo.id} className="profile_card__media_image">
+                                    <img src={logo.src} alt={logo.alt}></img>
+                                </div>
+                            </a>
                         )
                     })}
-
                 </div>
                 <div className="profile_card__links">
                     <a className="profile_card__link" href="https://www.codewars.com/users/tomaspizarro15">Codewars Profile</a>
                 </div>
+               
             </div>
         );
     }

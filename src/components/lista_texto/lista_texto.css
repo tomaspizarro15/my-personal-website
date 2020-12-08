@@ -1,0 +1,19 @@
+.text_list {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    border-left: 2px solid #212b85;
+}
+.text_list__element {
+    text-align: start;
+    list-style: none;
+    margin-left: 1vw;
+}
+.element__p {
+    font-size: 1vw;
+}
+@media (max-width : 768px){
+    .element__p {
+        font-size: 20px;
+    }
+}
