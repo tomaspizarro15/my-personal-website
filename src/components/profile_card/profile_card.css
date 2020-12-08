@@ -5,7 +5,7 @@
     align-items: center;
     background-color: #212B85;
     width: 80%;
-    margin: 0 0 1vw 0;
+    margin: 0 0 20px 0;
     padding: 2rem 0 1rem 0;
     border-radius: 8px;
     box-shadow:  0 0 15px -7.5px;
@@ -74,6 +74,9 @@
 @media(max-width : 728px){
     .profile_card{
         width: 90%;
+        margin: 50px;
+        background-color: white;
+        border: 2px solid #212B85;
     }
     .profile_card__photo{
         width: 15rem;
@@ -81,8 +84,14 @@
     .profile_card__photo_image{
         width: 12.5rem;
         height: 12.5rem;
+        box-shadow: 0px;
     }
-    .profile_card__info{}
+    .profile_card__info p{
+        font-weight: bold;
+        color: #212B85;
+    }
     .profile_card__media{}
-    .profile_card__links{}
+    .profile_card__link{
+        color: #212B85;
+    }
 }

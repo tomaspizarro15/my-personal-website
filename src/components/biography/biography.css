@@ -13,3 +13,8 @@
     transition : all 250ms ease-in-out;
     cursor: pointer;
 }
+@media(max-width : 768) {
+    .back_button {
+        width: 50%;
+    }
+}

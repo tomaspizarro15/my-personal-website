@@ -77,11 +77,11 @@ border-radius: 0 0 0px 8px;
    background-color: #212B85;
  }
  .header_tools_anchor:hover {
-  color: black;
+  color: white;
   transition: all 250ms ease; 
 }
  .header_tools_anchor {
-   color: white;
+   color: #cccccc;
    font-weight: lighter;
  }
  .header_left {
