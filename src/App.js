@@ -21,6 +21,9 @@ import Cookies from 'universal-cookie';
 import Biography from './components/biography/biography';
 import AdminProfile from './admin_components/profile/admin_profile';
 import { Helmet } from 'react-helmet';
+import Phrase from './components/phrases/phrases';
+import ListaDeTexto from './components/lista_texto/lista_texto';
+import Informacion from './components/information/informacion';
 
 class App extends Component {
   state = {
@@ -28,27 +31,12 @@ class App extends Component {
     status: undefined,
     user: {},
     image: "",
+   
   }
-
-  fileReader = (file) => {
-    const blob = new Blob(file.data)
-    const newBlob = blob.arrayBuffer(file.data)
-    const reader = new FileReader()
-    const promise = new Promise((resolve, reject) => {
-      reader.onload = (event) => resolve(event.target.result)
-      reader.onerror = (e) => reject(e)
-    })
-    const readedFil = reader.readAsDataURL(blob)
-    return promise
-
-  }
-
   componentDidMount() {
     const formData = new FormData();
     const cookie = new Cookies;
     const token = cookie.get('token');
-
-
 
     fetch('https://tomas-pizarro.herokuapp.com/', {
       method: "GET",
@@ -58,22 +46,19 @@ class App extends Component {
       }
     })
       .then(promise => {
-        console.log(promise)
         return promise.json()
       })
       .then(res => {
-        console.log(res)
         if (res.status === 200) {
-          this.setState({ status: res.status ,user: res.user})
-          this.props.fetchUser(res.user, res.status) 
+          this.setState({ status: res.status, user: res.user })
+          this.props.fetchUser(res.user, res.status)
         }
       })
   }
   render() {
-    console.log(this.state)
     return (
       <div className="App">
-      <title>Tomas Pizarro</title>
+        <title>Tomas Pizarro</title>
         <BrowserRouter>
           <Header />
           <Helmet><title>Tomas Pizarro</title></Helmet>
@@ -99,7 +84,8 @@ class App extends Component {
               </Switch>
             </div>
             <div className="App_side__content">
-              <ProfileCard /> 
+              <Route path="/" exact component={ProfileCard}/>
+              <Route path="/" exact component={Informacion} />
             </div>
           </div>
           <Footer />

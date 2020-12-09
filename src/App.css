@@ -46,6 +46,7 @@
   }
   .App_side__content {
     width: 90%;
+    margin-bottom: 20px;
   }
   .App_main__content {
     width: 100%;

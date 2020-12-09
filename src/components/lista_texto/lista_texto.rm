@@ -1,0 +1,3 @@
+LISTA DE TEXTO RECIBE 2 ARGUMENTOS :
+- {message : String , color : String}
+-[{id : String , texto : String}]

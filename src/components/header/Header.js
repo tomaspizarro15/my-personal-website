@@ -19,7 +19,6 @@ class Header extends Component {
     cookie: ""
   }
   render() {
-    console.log(this.props.user)
     return (
       <div className="header_container">
         <nav className="header">
@@ -27,7 +26,7 @@ class Header extends Component {
             <Link className="header_home" to="/">
               <HomeButton src={Home_Logo} alt="home" />
             </Link>
-            {this.props.user.token ? [<Link to="/admin/profile"><HomeButton src ={settings_Logo} alt="settings"/></Link> , <Link to="/admin-profile"><LogoutIcon/></Link>] : null}
+            {this.props.user.token ? [<Link key ="admin_profile2" to="/admin/profile"><HomeButton src ={settings_Logo} alt="settings"/></Link> , <Link key="admin_profile1" to="/admin-profile"><LogoutIcon/></Link>] : null}
           </div>
           <div className="header_void">
 

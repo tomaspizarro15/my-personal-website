@@ -13,9 +13,7 @@ class ProfileCard extends Component {
             { ref : "https://www.linkedin.com/in/tom%C3%A1s-pizarro-14b0021b2/" ,id: "logo02", alt: 'linkedin', src: linkLogo },
         ],
     }
-
     render() {
-        console.log(this.props.user)
         return (
             <div className="profile_card">
                 <div className="profile_card__photo">
@@ -27,8 +25,8 @@ class ProfileCard extends Component {
                 <div className="profile_card__media">
                     {this.state.logos.map((logo) => {
                         return (
-                            <a href = {logo.ref}>
-                                <div key={logo.id} className="profile_card__media_image">
+                            <a href = {logo.ref}  key={logo.id} >
+                                <div  className="profile_card__media_image">
                                     <img src={logo.src} alt={logo.alt}></img>
                                 </div>
                             </a>
