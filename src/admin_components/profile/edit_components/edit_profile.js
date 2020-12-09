@@ -10,7 +10,7 @@ class EditProfile extends Component {
         ],
         image: "",
         file: "",
-        url: 'http://localhost:8080/admin/edit-profile'
+        url: 'https://tomas-pizarro.herokuapp.com/admin/edit-profile'
     }
     cookies = new Cookies();
     fileReader = (file) => {
