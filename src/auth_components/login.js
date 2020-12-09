@@ -21,7 +21,7 @@ class login extends Component {
     }
     submitFormHandler = (event) => {
         event.preventDefault();
-        fetch('http://localhost:8080/login', {
+        fetch('https://tomas-pizarro.herokuapp.com/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -35,6 +35,7 @@ class login extends Component {
                 return promise.json();
             })
             .then(response => {
+                console.log(response)
                 if (!response.token) {
                     console.log(response)
                     const newStatus = { ...this.state.loginStatus };
@@ -48,11 +49,10 @@ class login extends Component {
                     this.props.auth(this.fetchCookieHandler(response.token));
                     newStatus.status = false;
                     this.setState({ loginStatus: newStatus })
-                    window.location.replace('http://localhost:3000')
+                    window.location.replace('https://tomas-pizarro-web.herokuapp.com/')
                 }
             })
     }
-
     fetchCookieHandler = (token) => {
         const cookie = new Cookies();
         const date = new Date();
