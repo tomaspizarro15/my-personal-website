@@ -13,6 +13,7 @@ class login extends Component {
             code: 100, message: "", status: false,
         },
         token: {},
+        label :"",
     }
     inputChangeHandler = (event, index) => {
         const newFields = [...this.state.fields]
