@@ -17,7 +17,7 @@ class ProfileCard extends Component {
         return (
             <div className="profile_card">
                 <div className="profile_card__photo">
-                    <div className="profile_card__photo_image" style={{ backgroundImage: `url('${this.props.user.image}')` }}></div>
+                    <div className="profile_card__photo_image" style={{ backgroundImage: `url('https://media-exp1.licdn.com/dms/image/C4D03AQEFDzVsAwdSzg/profile-displayphoto-shrink_200_200/0/1607533303266?e=1613001600&v=beta&t=3IJJeCX459P_0NVD1bPKTijaUbFXeoIwYiXLm8ZCTH4')` }}></div>
                 </div>
                 <div className="profile_card__info">
                     <p>{this.props.user.username}</p>
