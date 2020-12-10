@@ -26,7 +26,7 @@ class Main extends Component {
         { id: 3, text: 'El objetivo es mostrar la tecnología  que se ha implementado y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
       git: [
-        { id: 1, text: 'Pueden seguirme en Git-hub, Codewars, o escribirme a tomaspizarro1570@gmail.com , cualquier feedback se agradece , tambien pueden ver mi perfil de Linkedin en el encabezado de la pagina' },
+        { id: 1, text: 'Pueden seguirme en Git-hub, Codewars, o escribirme a tomaspizarro1570@gmail.com , cualquier feedback se agradece , también pueden ver mi perfil de Linkedin en el encabezado de la pagina' },
         { id: 2, text: 'Por ahora sigo trabajando en la pagina para poder subir contenido, estar atentos' }
       ]
     },

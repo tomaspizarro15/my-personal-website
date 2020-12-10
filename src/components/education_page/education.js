@@ -31,7 +31,7 @@ class Education extends Component {
         paragraph: {
             title: { message: 'Educación', color: '#212b85' },
             main: [
-                { id: "p01", text: 'Mi educación el la programación comenzó en la UTN-FRM en Mendoza,Argentina. Estudie durante 1 año sobre Fundamentos de la programación , para despues realizar una especialización en paginas web' },
+                { id: "p01", text: 'Mi educación el la programación comenzó en la UTN-FRM en Mendoza, Argentina. Estudie durante 1 año sobre Fundamentos de la programación , para después realizar una especialización en paginas web' },
                 { id: "p02", text: 'Después me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]' },
                 { id: "p03", text: 'Me eduque como MERN  App Developer y lo hice desde Udemy de la mano de Academind  ' }
             ]
@@ -74,15 +74,15 @@ class Education extends Component {
                 { id: "list01", texto: "Resolver algoritmos de dificultad intermedia.([5 kyu] Codewars.com)" },
                 { id :"list02", texto :"Implementación de Error Handling en JavaScript"},
                 { id: "list03", texto: "Manejo de Promesas , Callbacks y Asynchronous Programming" },
-                { id: "list04", texto: "Orquestar y planificar un Sistema informatico" },
-                { id: "list05", texto: "Diseñar,Construir y Desplegar servidores en Node/Express" },
+                { id: "list04", texto: "Orquestar y planificar un Sistema informático" },
+                { id: "list05", texto: "Diseñar, Construir y Desplegar servidores en Node/Express" },
                 { id: "list06", texto: "Manipular, leer y escribir bases de datos (SQL , MONGOdb)" },
                 { id: "list07", texto: "Conocimiento en Framewoks de bases de datos como Mongoose , Sequelize" },
-                { id: "list08", texto: "Resolver problematicas presentadas en la construcción de una Aplicación entera" },
+                { id: "list08", texto: "Resolver problemáticas presentadas en la construcción de una Aplicación entera" },
                 { id: "list09", texto: "Desarrollar una WEB desde 0. con el MVC system" },
                 { id: "list10", texto: "Construir APIs , REST APIs en Node.js , Express.js" },
-                {id :"list11" , texto :"Conocimientos en Autentificacion y validacion en frontend y backend (Express-validator , custom Middlewares)"},
-                { id: "list12", texto: "Construir el Cliente de una aplicacion en React" },
+                {id :"list11" , texto :"Conocimientos en Autentificación y validación en frontend y backend (Express-validator , custom Middlewares)"},
+                { id: "list12", texto: "Construir el Cliente de una aplicación en React" },
                 { id: "list13", texto: "Realizar conexiones/consultas CLIENTE-SERVIDOR JavaScript - Node.js" },
                 { id: "list14", texto: "Utilizar softwares de consultas (Postman , Insomnia)" },
                 { id: "list15", texto: "Manipular tanto el DOM/REACT DOM a la perfección con React.Router" },
