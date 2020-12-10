@@ -20,10 +20,10 @@ class Main extends Component {
     },
     paragraphs: {
       main: [
-        { id: 0, text: 'Cree esta pagina para poder mostrar mi trabajo , mi educación y  pasión por el desarollo de software, para que las personas que entren a este sitio puedan ver los conocimientos y tecnologias en los que me he educado y especializado en  estos años , ademas para poder demostrar que Argentina y Mendoza tiene desarrolladores con muchisimo talento y potencial para cambiar el mundo del Software' },
-        { id: 1, text: 'Creo que con un mayor esfuerzo para promover y estimular estos talentos de los estudiantes y desarrolladores que se encuentran en nuestra provincia y en nuestro pais, podriamos llegar a ser uno de los paises mas influyentes en la Industria ,en mendoza el cupo de desarrolladores web es muy grande y deberiamos poder suplir esa demanda de trabajo para lograr un crecimiento del rubro' },
-        { id: 2, text: 'Ademas en este sitio web, habran blogs con conocimiento escrito por mi, sobre distintas tecnologias en las que me he especializado como React o Node.js .Cada segmento tendra temas de la tecnologia o el lenguaje en cuestión  ' },
-        { id: 3, text: 'El objetivo es mostrar la tecnologia  que se ha implementado y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
+        { id: 0, text: 'Cree esta pagína para poder mostrar mi trabajo , mi educación y  pasión por el desarrollo de software, para que las personas que entren a este sitio puedan ver los conocimientos y tecnologias en los que me he educado y especializado en  estos años , además para poder demostrar que Argentina y Mendoza tiene desarrolladores con muchísimo talento y potencial para cambiar el mundo del Software' },
+        { id: 1, text: 'Creo que con un mayor esfuerzo para promover y estimular estos talentos de los estudiantes y desarrolladores que se encuentran en nuestra provincia y en nuestro país, podriamos llegar a ser uno de los países mas influyentes en la Industria ,en Mendoza el cupo de desarrolladores web es muy grande y deberíamos poder suplir esa demanda de trabajo para lograr un crecimiento del rubro' },
+        { id: 2, text: 'Además en este sitio web, habrán blogs con conocimiento escrito por mi, sobre distintas tecnologias en las que me he especializado como React o Node.js .Cada segmento tendra temas de la tecnologia o el lenguaje en cuestión  ' },
+        { id: 3, text: 'El objetivo es mostrar la tecnología  que se ha implementado y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
       git: [
         { id: 1, text: 'Pueden seguirme en Git-hub, Codewars, o escribirme a tomaspizarro1570@gmail.com , cualquier feedback se agradece , tambien pueden ver mi perfil de Linkedin en el encabezado de la pagina' },

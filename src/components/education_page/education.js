@@ -23,7 +23,7 @@ class Education extends Component {
                 logo: academindLogo,
                 name: 'Academind',
                 website: '',
-                text: 'Academind es un instituto de programacion online fundado por Maximilian Schwarzmülller & Manuel Lorenz y cuenta con mas de 1.000.000 de estudiantes alrededor del mundo.  Se enfoca en el desarrollo web y cuenta con decenas de certificaciones sobre distintas tecnologias de la industria como Mongodb, Node.js , React.js , Angular , Native y mas!',
+                text: 'Academind es un instituto de programación online fundado por Maximilian Schwarzmülller & Manuel Lorenz y cuenta con mas de 1.000.000 de estudiantes alrededor del mundo.  Se enfoca en el desarrollo web y cuenta con decenas de certificaciones sobre distintas tecnologías de la industria como Mongodb, Node.js , React.js , Angular , Native y mas!',
                 color: 'orange',
                 link: 'https://academind.com/',
             }
@@ -31,8 +31,8 @@ class Education extends Component {
         paragraph: {
             title: { message: 'Educación', color: '#212b85' },
             main: [
-                { id: "p01", text: 'Mi educación el la programación comenzo en la UTN-FRM en mendoza, estudie durante 1 año sobre Fundamentos de la programación , para despues realizar una especialización en paginas web' },
-                { id: "p02", text: 'Despues me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]' },
+                { id: "p01", text: 'Mi educación el la programación comenzó en la UTN-FRM en Mendoza,Argentina. Estudie durante 1 año sobre Fundamentos de la programación , para despues realizar una especialización en paginas web' },
+                { id: "p02", text: 'Después me especialice en desarrollo web empezando con las bases de JavaScript(EcmaScript 2016)[Clases, Arrays, Objects , paradigma funcional entre muchas otras cosas]' },
                 { id: "p03", text: 'Me eduque como MERN  App Developer y lo hice desde Udemy de la mano de Academind  ' }
             ]
         },
@@ -46,7 +46,7 @@ class Education extends Component {
         educacionPrevia: {
             title: 'Educación previa',
             items: [
-                { id: "p04", text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Perez Esquivel Mendoza , Argentina' }
+                { id: "p04", text: 'Tengo un bachillerato en economía y en educación contable   egresado de la escuela N 4-128 Adolfo Peréz Esquivel Mendoza , Argentina' }
             ]
         },
         idiomas: {
@@ -54,7 +54,7 @@ class Education extends Component {
             items: [
                 { id: "p01", texto: 'Español' },
                 { id: "p02", texto: 'Ingles avanzado'  },
-                { id: "p03", texto: 'Portugues basico' },
+                { id: "p03", texto: 'Portugués básico' },
             ]
         },
         lists: {
