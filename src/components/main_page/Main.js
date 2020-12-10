@@ -20,9 +20,9 @@ class Main extends Component {
     },
     paragraphs: {
       main: [
-        { id: 0, text: 'Cree esta pagína para poder mostrar mi trabajo , mi educación y  pasión por el desarrollo de software, para que las personas que entren a este sitio puedan ver los conocimientos y tecnologias en los que me he educado y especializado en  estos años , además para poder demostrar que Argentina y Mendoza tiene desarrolladores con muchísimo talento y potencial para cambiar el mundo del Software' },
-        { id: 1, text: 'Creo que con un mayor esfuerzo para promover y estimular estos talentos de los estudiantes y desarrolladores que se encuentran en nuestra provincia y en nuestro país, podriamos llegar a ser uno de los países mas influyentes en la Industria ,en Mendoza el cupo de desarrolladores web es muy grande y deberíamos poder suplir esa demanda de trabajo para lograr un crecimiento del rubro' },
-        { id: 2, text: 'Además en este sitio web, habrán blogs con conocimiento escrito por mi, sobre distintas tecnologias en las que me he especializado como React o Node.js .Cada segmento tendra temas de la tecnologia o el lenguaje en cuestión  ' },
+        { id: 0, text: 'Cree esta pagina para poder mostrar mi trabajo , mi educación y  pasión por el desarrollo de software, para que las personas que entren a este sitio puedan ver los conocimientos y tecnologías en los que me he educado y especializado en  estos años , además para poder demostrar que Argentina y Mendoza tiene desarrolladores con muchísimo talento y potencial para cambiar el mundo del Software' },
+        { id: 1, text: 'Creo que con un mayor esfuerzo para promover y estimular estos talentos de los estudiantes y desarrolladores que se encuentran en nuestra provincia y en nuestro país, podríamos llegar a ser uno de los países mas influyentes en la Industria ,en Mendoza el cupo de desarrolladores web es muy grande y deberíamos poder suplir esa demanda de trabajo para lograr un crecimiento del rubro' },
+        { id: 2, text: 'Además en este sitio web, habrán blogs con conocimiento escrito por mi, sobre distintas tecnologías en las que me he especializado como React o Node.js .Cada segmento tendrá temas de la tecnologia o el lenguaje en cuestión  ' },
         { id: 3, text: 'El objetivo es mostrar la tecnología  que se ha implementado y ayudar a las personas de la misma manera que me ayudaron a mi para poder realizarme como un desarrollador de software' }
       ],
       git: [
