@@ -69,8 +69,8 @@ class App extends Component {
                 <Route path="/" exact component={Main} />
                 <Route path="/login" exact component={login} />
                 <Route path="/contactos" exact component={Main} />
-                <Route path="/educacion" exact component={Education} />
-                <Route path="/biografia" exact component={Biography} />
+                <Route path="/educación" exact component={Education} />
+                <Route path="/biografía" exact component={Biography} />
                 <Route path="/blogs/:id/:blog" exact component={Blogs} />
                 {this.state.user.token
                   ?
