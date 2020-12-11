@@ -53,7 +53,7 @@ class Education extends Component {
             title: {text : "Idiomas" , color :"#212B85"},
             items: [
                 { id: "p01", texto: 'Español' },
-                { id: "p02", texto: 'Ingles avanzado'  },
+                { id: "p02", texto: 'Inglés avanzado'  },
                 { id: "p03", texto: 'Portugués básico' },
             ]
         },
