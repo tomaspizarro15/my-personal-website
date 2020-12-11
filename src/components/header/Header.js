@@ -13,8 +13,8 @@ class Header extends Component {
 
   state = {
     navigationTools: [
-      { id: "tool1", title: 'Educacion', path: '/educacion' },
-      { id: "tool2", title: 'Sobre mi', path: '/biografia' },
+      { id: "tool1", title: 'Educacion', path: '/educación' },
+      { id: "tool2", title: 'Sobre mi', path: '/biografía' },
     ],
     cookie: ""
   }
