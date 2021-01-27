@@ -17,7 +17,7 @@ class ProfileCard extends Component {
         return (
             <div className="profile_card">
                 <div className="profile_card__photo">
-                    <div className="profile_card__photo_image" style={{ backgroundImage: `url('https://media-exp1.licdn.com/dms/image/C4D03AQEFDzVsAwdSzg/profile-displayphoto-shrink_200_200/0/1607533303266?e=1613001600&v=beta&t=3IJJeCX459P_0NVD1bPKTijaUbFXeoIwYiXLm8ZCTH4')` }}></div>
+                    <div className="profile_card__photo_image" style={{ backgroundImage: `url('https://media-exp1.licdn.com/dms/image/C4D03AQHVgKr27JjwmQ/profile-displayphoto-shrink_200_200/0/1611353220370?e=1617235200&v=beta&t=CMZFv_BdPm8McBv50bNX-wqnPxxA0WSL8NwOqElzebs')` }}></div>
                 </div>
                 <div className="profile_card__info">
                     <p>{this.props.user.username}</p>
