@@ -21,9 +21,6 @@ class Informacion extends Component {
                 if(res.status === 200 ) {
                     this.setState({ lista: res.lista })
                 }
-                else {
-                    this.setState({ lista : [] })
-                }
             })
     }
     addFieldOfInfo = () => {

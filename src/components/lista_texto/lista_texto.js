@@ -8,11 +8,13 @@ const ListaDeTexto = (props) => {
         <React.Fragment>
             <Phrase phrase={props.title} />
             <ul className="text_list">
-                {props.lista.map(e => {
-                    return (
-                        <li className="text_list__element" key={e.id}><p className="element__p">{e.texto}</p></li>
-                    )
-                })}
+                {props.lista ?
+                    props.lista.map(e => {
+                        return (
+                            <li className="text_list__element" key={e.id}><p className="element__p">{e.texto}</p></li>
+                        )
+                    })
+                    : null}
             </ul>
         </React.Fragment>
     )
