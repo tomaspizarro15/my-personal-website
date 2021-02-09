@@ -83,6 +83,7 @@ class App extends Component {
             <div className="App_side__content">
               <Route path="/" exact component={ProfileCard}/>
               <Route path="/" exact component={Informacion} />
+              <Toolbar/>
             </div>
           </div>
           <Footer />
