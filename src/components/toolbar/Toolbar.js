@@ -8,7 +8,7 @@ class Toolbar extends PureComponent {
         sections: []
     }
     componentDidMount() {
-        fetch('https://tomas-pizarro.herokuapp.com/toolbar', {
+        fetch('https://localhost:8080/toolbar', {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json"

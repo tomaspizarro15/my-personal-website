@@ -18,7 +18,12 @@ class Informacion extends Component {
             },
         }).then(promise => promise.json())
             .then(res => {
-                this.setState({ lista: res.lista })
+                if(res.status === 200 ) {
+                    this.setState({ lista: res.lista })
+                }
+                else {
+                    this.setState({ lista : [] })
+                }
             })
     }
     addFieldOfInfo = () => {

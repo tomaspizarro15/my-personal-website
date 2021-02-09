@@ -38,16 +38,13 @@ class App extends Component {
     const cookie = new Cookies;
     const token = cookie.get('token');
 
-    fetch('https://tomas-pizarro.herokuapp.com/', {
+    fetch('http://localhost:8080/', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": token,
       }
     })
-      .then(promise => {
-        return promise.json()
-      })
+      .then(promise =>  promise.json())
       .then(res => {
         if (res.status === 200) {
           this.setState({ status: res.status, user: res.user })
