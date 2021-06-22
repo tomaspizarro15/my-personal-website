@@ -64,7 +64,6 @@ class Diagram extends Component {
         newDiagrams.items = newItems;
         this.setState({ mernDiagram: newDiagrams })
     }
-
     render() {
         let diagram = { ...this.state.mernDiagram }
         return (
@@ -86,8 +85,6 @@ class Diagram extends Component {
             </div>
         );
     }
-
-
 }
 
 export default Diagram;

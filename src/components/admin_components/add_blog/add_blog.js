@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './add_blog.css';
-import Phrase from '../../components/phrases/phrases';
+import Phrase from './../../phrases/phrases';
 import BlogForms from '../add_toolbar/blog_forms';
 import BlogSegment from './blog_segment';
 import { v4 as uuidv4 } from 'uuid';
-import Modal from '../../util/modal/modal';
-import Spacer from '../../util/spacer/spacer';
+import Modal from '../../../util/modal/modal';
+import Spacer from '../../../util/spacer/spacer';
 import BlogPreview from './blog_preview/blog_preview';
 import Cookies from 'universal-cookie';
 import { connect } from 'react-redux';

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './add_toolbar.css';
-import Phrase from '../../components/phrases/phrases';
+import Phrase from '../../../components/phrases/phrases';
 import BlogForms from './blog_forms';
 import AddSegment from '../add_segment/add_segment';
-import ErrorHandler from '../../error/error_handler';
+import ErrorHandler from './../../../error/errorComponents/404';
 import { v4 as uuidv4 } from 'uuid';
 import { connect } from 'react-redux';
 class AddToolbar extends Component {

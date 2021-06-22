@@ -9,17 +9,17 @@ import Footer from './components/footer/footer';
 import ProfileCard from './components/profile_card/ProfileCard';
 import Education from './components/education_page/education';
 import Blogs from './components/blogs/Blogs';
-import AddToolbar from './admin_components/add_toolbar/add_toolbar';
-import AddBlog from './admin_components/add_blog/add_blog';
+import AddToolbar from './components/admin_components/add_toolbar/add_toolbar';
+import AddBlog from './components/admin_components/add_blog/add_blog';
 import My404Component from './error/errorComponents/404';
-import login from './auth_components/login';
+import login from './components/auth_components/login';
 
 import { fetchToken, fetchUser } from './redux/actions';
 import * as actionType from './redux/actions';
 import { connect } from 'react-redux'
 import Cookies from 'universal-cookie';
 import Biography from './components/biography/biography';
-import AdminProfile from './admin_components/profile/admin_profile';
+import AdminProfile from './components/admin_components/profile/admin_profile';
 import { Helmet } from 'react-helmet';
 import Phrase from './components/phrases/phrases';
 import ListaDeTexto from './components/lista_texto/lista_texto';
